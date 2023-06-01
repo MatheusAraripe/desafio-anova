@@ -1,18 +1,24 @@
 import {createContext, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
 
+    const navigate = useNavigate();
+
     const [user, setUser] = useState(null);
 
     const login = (email, password) => {
-        console.log("login", {email, password});
-        setUser({id: '1', email});
+        if(password === "12345"){
+            setUser({id: '1', email});
+            navigate("/");
+        }
     };
 
     const logout = () => {
-        console.log("logout");
+        setUser(null);
+        navigate("/login");
     };
 
     return(

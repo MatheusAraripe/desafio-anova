@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { 
     BrowserRouter as Router,
@@ -11,17 +11,27 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 
 // Importe do context
-import { AuthProvider } from "./contexts/auth";
+import { AuthContext, AuthProvider } from "./contexts/auth";
 
 
 const AppRoutes = () => {
+
+    const Private = ({children}) => {
+        const {authenticated} = useContext(AuthContext)
+
+        if(!authenticated){
+            return <Navigate to="/login" />
+        }
+
+        return children;
+    };
 
     return(
         <Router>
             <AuthProvider>
                 <Routes>
                     <Route exact path="/login" element={<LoginPage />} />
-                    <Route exact path="/" element={<HomePage />} />
+                    <Route exact path="/" element={ <Private><HomePage /></Private>} />
                 </Routes>
             </AuthProvider>
         </Router>
