@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
+import { AuthContext } from '../contexts/auth';
 
 // React hook form
 import { useForm } from "react-hook-form";
@@ -17,12 +19,18 @@ const schema = yup.object({
 
 const LoginForm = () => {
 
+  const {authenticated, login} = useContext(AuthContext);
+
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
-  const handleSubmit = (data) => console.log(data);
+  const handleSubmit = (data) => {
+    console.log("Foii")
+    login(data.email, data.password)
+  };
 
   return (
       <div className="login-form">
         <h2>Entrar</h2>
+        <p>logado: {String(authenticated)}</p>
         <form onSubmit={onSubmit(handleSubmit)}>
           <div className="form-group">
             <label htmlFor='email'>Email</label>
