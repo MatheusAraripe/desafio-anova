@@ -1,0 +1,39 @@
+$withe: #fff;
+
+.login-form {
+    position: absolute;
+    width: 546px;
+    right: 0px;
+    top: 0%;
+    bottom: 0%;
+    background: #029456;
+    color: $withe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    position: absolute;
+    width: 546px;
+    height: 35px;
+    right: 0px;
+    top: 135px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    /* identical to box height */
+
+    text-align: center;
+}
+
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $withe;
+    right: 92px;
+    width: 357px;
+    margin-bottom: 60px;
+}

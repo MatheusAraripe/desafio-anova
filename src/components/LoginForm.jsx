@@ -30,10 +30,8 @@ const LoginForm = () => {
   return (
       <div className="login-form">
         <h2>Entrar</h2>
-        <p>logado: {String(authenticated)}</p>
         <form onSubmit={onSubmit(handleSubmit)}>
           <div className="form-group">
-            <label htmlFor='email'>Email</label>
             <input
               type="email"
               placeholder="Enter your email"
@@ -44,7 +42,6 @@ const LoginForm = () => {
             </span>
           </div>
           <div className="form-group">
-            <label htmlFor='password'>Password</label>
             <input
               type="password"
               placeholder="Enter your password"
@@ -56,6 +53,7 @@ const LoginForm = () => {
           </div>
           <button type="submit">Login</button>
         </form>
+        <p>logado: {String(authenticated)}</p>
       </div>
   );
 };
