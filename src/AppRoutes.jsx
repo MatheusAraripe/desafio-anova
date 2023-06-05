@@ -9,9 +9,11 @@ import {
 
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
+import SignUp from "./pages/SignupPage";
 
 // Importe do context
 import { AuthContext, AuthProvider } from "./contexts/auth";
+
 
 
 // criação da área privada(apenas usuários logados)
@@ -36,6 +38,7 @@ const AppRoutes = () => {
                 <Routes>
                     <Route exact path="/login" element={<LoginPage />} />
                     <Route exact path="/" element={ <Private><HomePage /></Private>} />
+                    <Route exact path="/signup" element={ <SignUp />} />
                 </Routes>
             </AuthProvider>
         </Router>

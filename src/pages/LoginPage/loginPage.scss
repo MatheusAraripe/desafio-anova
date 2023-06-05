@@ -65,10 +65,16 @@ button:hover{
     cursor: pointer;
 }
 
-.teste{
+.link-login{
     position: absolute;
     width: 546px;
     height: 15px;
     right: 0px;
-    top: calc(50% - 15px/2 + 94.5px);
+    top: calc(54% - 15px/2 + 94.5px);
+    color: $withe;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
 }

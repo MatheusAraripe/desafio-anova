@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../contexts/auth';
 
@@ -22,9 +23,7 @@ const LoginForm = () => {
   const {authenticated, login} = useContext(AuthContext);
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
-  const handleSubmit = (data) => {
-    console.log("Foii")
-    login(data.email, data.password)
+  const handleSubmit = () => {
   };
 
   return (
@@ -54,7 +53,7 @@ const LoginForm = () => {
           </div>
           <button type="submit">Entrar</button>
         </form>
-        <p className='teste'>teste</p>
+        <Link to="/signup" className="link-login">Cadastrar</Link>
       </div>
       <p>logado: {String(authenticated)}</p>
     </>
