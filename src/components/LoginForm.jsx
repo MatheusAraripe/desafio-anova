@@ -54,7 +54,7 @@ const LoginForm = () => {
           </div>
           <button type="submit">Entrar</button>
         </form>
-        
+        <p className='teste'>teste</p>
       </div>
       <p>logado: {String(authenticated)}</p>
     </>

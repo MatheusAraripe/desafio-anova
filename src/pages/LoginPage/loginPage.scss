@@ -57,9 +57,18 @@ button {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+    margin-bottom: 10px;
 }
 
 button:hover{
     background-color: #021f13;
     cursor: pointer;
+}
+
+.teste{
+    position: absolute;
+    width: 546px;
+    height: 15px;
+    right: 0px;
+    top: calc(50% - 15px/2 + 94.5px);
 }
