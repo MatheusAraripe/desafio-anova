@@ -36,4 +36,30 @@ input{
     right: 92px;
     width: 357px;
     margin-bottom: 60px;
+    
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $withe;
+    opacity: 0.5; /* Firefox */
+}
+
+button {
+    border-radius: 8px;
+    background-color: #01321E;
+    width: 357px;
+    height: 52px;
+    right: 92px;
+    color: $withe;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+button:hover{
+    background-color: #021f13;
+    cursor: pointer;
 }

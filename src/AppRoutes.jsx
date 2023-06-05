@@ -14,22 +14,21 @@ import HomePage from "./pages/HomePage";
 import { AuthContext, AuthProvider } from "./contexts/auth";
 
 
+// criação da área privada(apenas usuários logados)
+const Private = ({children}) => {
+    const {authenticated, loading} = useContext(AuthContext)
+
+    if (loading) {
+        return <div className="loading"> Carregando...</div>;
+    }
+    if(!authenticated){
+        return <Navigate to="/login" />
+    }
+
+    return children;
+};
+
 const AppRoutes = () => {
-
-
-    // criação da área privada(apenas usuários logados)
-    const Private = ({children}) => {
-        const {authenticated, loading} = useContext(AuthContext)
-
-        if (loading) {
-            return <div className="loading"> Carregando...</div>;
-        }
-        if(!authenticated){
-            return <Navigate to="/login" />
-        }
-
-        return children;
-    };
 
     return(
         <Router>

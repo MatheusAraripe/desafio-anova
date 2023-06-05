@@ -28,13 +28,14 @@ const LoginForm = () => {
   };
 
   return (
+    <>
       <div className="login-form">
         <h2>Entrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
           <div className="form-group">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="usuario@ntendencia.com.br"
               {...register("email")}
             />
             <span className="error">
@@ -44,17 +45,19 @@ const LoginForm = () => {
           <div className="form-group">
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Senha"
               {...register("password")}
             />
             <span className="error">
               {errors.email?.message}
             </span>
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Entrar</button>
         </form>
-        <p>logado: {String(authenticated)}</p>
+        
       </div>
+      <p>logado: {String(authenticated)}</p>
+    </>
   );
 };
 
