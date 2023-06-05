@@ -23,7 +23,8 @@ const LoginForm = () => {
   const {authenticated, login} = useContext(AuthContext);
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
-  const handleSubmit = () => {
+  const handleSubmit = (data) => {
+    login(data.email, data.password)
   };
 
   return (
