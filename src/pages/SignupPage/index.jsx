@@ -3,7 +3,10 @@ import SignUpForm from '../../components/SignUpForm';
 
 function SignUp() {
   return (
-    <SignUpForm />
+    <>
+      <h1>Pagina de cadastro</h1>
+      <SignUpForm />
+    </>
   )
 };
 

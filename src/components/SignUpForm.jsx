@@ -1,32 +1,77 @@
-// import React from 'react'
+import React from 'react'
 
-// // React hook form
-// import { useForm } from "react-hook-form";
-// import { yupResolver } from '@hookform/resolvers/yup';
+// React hook form
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 
-// // Yup
-// import * as yup from "yup";
+// Yup
+import * as yup from "yup";
 
 
-// // Schema para validação
-// const schema = yup.object({
-//     email: yup.string().required("Campo obrigaório"),
-//     password: yup.string().required("Campo obrigaório")
-//     .min(8, "A senha deve ter ao menos 8 caracteres")
-//     .matches(/[0-9]/, getCharacterValidationError("Deve ter um digito"))
-//     .matches(/[a-z]/, getCharacterValidationError("Deve ter letras menúsculas"))
-//     .matches(/[A-Z]/, getCharacterValidationError("Deve ter ao menos uma letra maiúscula")),
-//     confirmPassword: yup.string()
-//     .required("Insira a senha novamente")
+const getCharacterValidationError = (str) => {
+    return `Sua senha deve conter ao menos 1 ${str}`;
+};
 
-//     // usando o oneOf para achar a correspondência no array
-//     // usando "ref" para pegar o valor de referência
-//     .oneOf([ref("password")], "As senhas devem ser iguais"),
-// })
+
+// Schema para validação
+const schema = yup.object({
+    email: yup.string().required("Campo obrigaório"),
+    password: yup.string().required("Campo obrigaório")
+    .min(8, "A senha deve ter ao menos 8 caracteres")
+    .matches(/[0-9]/, getCharacterValidationError("digito"))
+    .matches(/[a-z]/, getCharacterValidationError("letra menúscula"))
+    .matches(/[A-Z]/, getCharacterValidationError("letra maiúscula")),
+    confirmPassword: yup.string()
+    .required("Insira a senha novamente")
+
+    // usando o oneOf para achar a correspondência no array
+    // usando "ref" para pegar o valor de referência
+    .oneOf([yup.ref("password")], "As senhas devem ser iguais"),
+})
 
 const SignUpForm = () => {
+  const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
+  const handleSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <div>SignUpForm</div>
+    <div className="login-form">
+        <h2>Entrar</h2>
+        <form onSubmit={onSubmit(handleSubmit)}>
+            <div className="form-group">
+                <input
+                type="email"
+                placeholder="usuario@ntendencia.com.br"
+                {...register("email")}
+                />
+                <span className="error">
+                {errors.email?.message}
+                </span>
+            </div>
+            <div className="form-group">
+                <input
+                type="password"
+                placeholder="Senha"
+                {...register("password")}
+                />
+                <span className="error">
+                {errors.password?.message}
+                </span>
+            </div>
+            <div className="form-group">
+                <input
+                type="password"
+                placeholder="Confirmar senha"
+                {...register("confirmPassword")}
+                />
+                <span className="error">
+                {errors.confirmPassword?.message}
+                </span>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
   )
 }
 

@@ -15,6 +15,7 @@ import * as yup from "yup";
 const schema = yup.object({
     email: yup.string().required("Campo obrigaório"),
     password: yup.string().required("Campo obrigaório")
+    .min(8, "A senha deve ter ao menos 8 caracteres")
 })
 
 
