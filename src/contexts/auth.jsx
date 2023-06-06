@@ -7,14 +7,22 @@ export const AuthProvider = ({children}) => {
 
     const navigate = useNavigate();
 
+    
+    const getUsersFromLs = () => {
+        const data = localStorage.getItem("user")
+        if (data){
+            return JSON.parse(data)
+        }
+        return [];
+    };
+
+
     // atribui se o usuário está logado ou não
-    const [user, setUser] = useState(null);
+    const [users, setUsers] = useState(getUsersFromLs);
 
     // loading para esperar a aplicação recuperar user no local storage
     const [loading, setLoading] = useState(true);
 
-
-    const users = [];
 
 
     // useEffect checa toda vez que a pagina é recarregada se o usuário
@@ -23,11 +31,12 @@ export const AuthProvider = ({children}) => {
         const recoveredUser = localStorage.getItem("user");
 
         if(recoveredUser){
-            setUser(JSON.parse(recoveredUser));
+            setUsers(JSON.parse(recoveredUser));
         }
 
         setLoading(false);
     },[]);
+
 
     const login = (email, password) => {
 
@@ -40,7 +49,7 @@ export const AuthProvider = ({children}) => {
 
 
         if(password === "12345678"){
-            setUser(loggedUser);
+            setUsers(loggedUser);
             navigate("/");
         };
     };
@@ -57,17 +66,17 @@ export const AuthProvider = ({children}) => {
 
         console.log(localStorage.getItem('user'));
 
-        navigate("/");
+        //navigate("/");
     };
 
     const logout = () => {
         localStorage.removeItem("user");
-        setUser(null);
+        setUsers(null);
         navigate("/login");
     };
 
     return(
-        <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout, signUp}}>
+        <AuthContext.Provider value={{authenticated: !!users, users, loading, login, logout, signUp}}>
             {children}
         </AuthContext.Provider>
     );
