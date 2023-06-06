@@ -31,14 +31,14 @@ export const AuthProvider = ({children}) => {
         const loggedUser = {
             id: "1",
             email
-        }
+        };
 
         localStorage.setItem("user", JSON.stringify(loggedUser));
 
-        if(password === "1234578"){
+        if(password === "12345678"){
             setUser(loggedUser);
             navigate("/");
-        }
+        };
     };
 
     const logout = () => {
