@@ -14,6 +14,9 @@ export const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
 
 
+    const users = [];
+
+
     // useEffect checa toda vez que a pagina é recarregada se o usuário
     // ainda está logado ou não
     useEffect( () => {
@@ -35,10 +38,26 @@ export const AuthProvider = ({children}) => {
 
         localStorage.setItem("user", JSON.stringify(loggedUser));
 
+
         if(password === "12345678"){
             setUser(loggedUser);
             navigate("/");
         };
+    };
+
+    const signUp = (email, password) => {
+        
+        const newUser = {
+            email,
+            password
+        }
+
+        users.push(newUser)
+        localStorage.setItem('user',JSON.stringify(users));
+
+        console.log(localStorage.getItem('user'));
+
+        navigate("/");
     };
 
     const logout = () => {
@@ -48,7 +67,7 @@ export const AuthProvider = ({children}) => {
     };
 
     return(
-        <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout}}>
+        <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout, signUp}}>
             {children}
         </AuthContext.Provider>
     );

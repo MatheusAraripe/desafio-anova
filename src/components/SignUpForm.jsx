@@ -1,4 +1,7 @@
-import React from 'react'
+import React, {useContext} from 'react'
+
+
+import { AuthContext } from '../contexts/auth';
 
 // React hook form
 import { useForm } from "react-hook-form";
@@ -30,9 +33,13 @@ const schema = yup.object({
 })
 
 const SignUpForm = () => {
+
+  const {signUp} = useContext(AuthContext);
+
+
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   const handleSubmit = (data) => {
-    console.log(data);
+    signUp(data.email, data.password)
   };
 
   return (
