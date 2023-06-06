@@ -1,4 +1,5 @@
-$withe: #fff;
+@use '../../styles/mixins';
+@import '../../styles/variables';
 
 .login-form {
     position: absolute;
@@ -6,7 +7,7 @@ $withe: #fff;
     right: 0px;
     top: 0%;
     bottom: 0%;
-    background: #029456;
+    background: $green;
     color: $withe;
     display: flex;
     justify-content: center;
@@ -20,11 +21,7 @@ h2 {
     right: 0px;
     top: 135px;
 
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 35px;
-    /* identical to box height */
+    @include mixins.h2-typography;
 
     text-align: center;
 }
@@ -35,8 +32,7 @@ input{
     border-bottom: 1px solid $withe;
     right: 92px;
     width: 357px;
-    margin-bottom: 60px;
-    
+    margin-bottom: 60px;  
 }
 
 
@@ -47,21 +43,20 @@ input{
 
 button {
     border-radius: 8px;
-    background-color: #01321E;
+    background-color: $btn-green;
     width: 357px;
     height: 52px;
     right: 92px;
     color: $withe;
     border: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    
+    @include mixins.big-btn-typography;
+
     margin-bottom: 10px;
 }
 
 button:hover{
-    background-color: #021f13;
+    background-color: $btn-hover-green;
     cursor: pointer;
 }
 
@@ -72,9 +67,5 @@ button:hover{
     right: 0px;
     top: calc(54% - 15px/2 + 94.5px);
     color: $withe;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
+    @include mixins.link-typography;
 }

@@ -25,6 +25,7 @@ const LoginForm = () => {
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   const handleSubmit = (data) => {
+    console.log(data);
     login(data.email, data.password)
   };
 
