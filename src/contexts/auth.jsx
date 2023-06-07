@@ -9,7 +9,7 @@ export const AuthProvider = ({children}) => {
 
     
     const getUsersFromLs = () => {
-        const data = localStorage.getItem("user")
+        const data = localStorage.getItem("users")
         if (data){
             return JSON.parse(data)
         }
@@ -18,6 +18,8 @@ export const AuthProvider = ({children}) => {
 
 
     // atribui se o usuário está logado ou não
+    const [user, setUser] = useState(null);
+
     const [users, setUsers] = useState(getUsersFromLs);
 
     // loading para esperar a aplicação recuperar user no local storage
@@ -31,7 +33,7 @@ export const AuthProvider = ({children}) => {
         const recoveredUser = localStorage.getItem("user");
 
         if(recoveredUser){
-            setUsers(JSON.parse(recoveredUser));
+            setUser(JSON.parse(recoveredUser));
         }
 
         setLoading(false);
@@ -49,7 +51,7 @@ export const AuthProvider = ({children}) => {
 
 
         if(password === "12345678"){
-            setUsers(loggedUser);
+            setUser(loggedUser);
             navigate("/");
         };
     };
@@ -62,9 +64,9 @@ export const AuthProvider = ({children}) => {
         }
 
         users.push(newUser)
-        localStorage.setItem('user',JSON.stringify(users));
+        localStorage.setItem('users',JSON.stringify(users));
 
-        console.log(localStorage.getItem('user'));
+        console.log(localStorage.getItem('users'));
 
         //navigate("/");
     };
@@ -76,7 +78,7 @@ export const AuthProvider = ({children}) => {
     };
 
     return(
-        <AuthContext.Provider value={{authenticated: !!users, users, loading, login, logout, signUp}}>
+        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp}}>
             {children}
         </AuthContext.Provider>
     );

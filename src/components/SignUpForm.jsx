@@ -44,7 +44,7 @@ const SignUpForm = () => {
 
   return (
     <div className="login-form">
-        <h2>Entrar</h2>
+        <h2>Cadastrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
             <div className="form-group">
                 <input
