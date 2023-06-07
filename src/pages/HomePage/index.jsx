@@ -1,16 +1,13 @@
-import React, {useContext} from 'react'
-import { AuthContext } from '../../contexts/auth';
+import React from 'react'
+import NavBar from '../../components/NavBar';
+import './homepage.scss'
 
 function HomePage() {
-  const {logout} = useContext(AuthContext);
-  const handleLogout = () => {
-    logout()
-  };
   return (
     <div>
-        <h1>
+        <NavBar />
+        <h1 className='home-page-title'>
             Home page privada!
-            <button onClick={handleLogout}>Logout</button>
         </h1>
     </div>
   )

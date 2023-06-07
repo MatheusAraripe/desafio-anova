@@ -1,0 +1,22 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.nav-bar{
+    overflow: hidden;
+    background-color: $nav-green;
+    height: 80px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.home-page-title{
+    margin: 5rem 0 2rem 0;
+}
