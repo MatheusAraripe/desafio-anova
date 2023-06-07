@@ -42,18 +42,25 @@ export const AuthProvider = ({children}) => {
 
     const login = (email, password) => {
 
-        const loggedUser = {
-            id: "1",
-            email
-        };
+        const usersArry = JSON.parse(localStorage.getItem('users'));
 
-        localStorage.setItem("user", JSON.stringify(loggedUser));
+        const foundUser = usersArry.find(e => e.email === email && e.password === password)
 
+        if(foundUser){
 
-        if(password === "12345678"){
+            const loggedUser = {
+                id: "1",
+                email: foundUser.email
+            };
+            
+            localStorage.setItem("user", JSON.stringify(loggedUser));
+
             setUser(loggedUser);
             navigate("/");
-        };
+        } else {
+            alert("Credenciais incorretas")
+            navigate("/login");
+        }
     };
 
     const signUp = (email, password) => {
