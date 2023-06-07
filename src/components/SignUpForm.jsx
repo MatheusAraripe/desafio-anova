@@ -53,6 +53,7 @@ const SignUpForm = () => {
                 placeholder="usuario@ntendencia.com.br"
                 {...register("email")}
                 />
+                
                 <span className="error">
                 {errors.email?.message}
                 </span>
