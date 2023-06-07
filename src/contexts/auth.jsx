@@ -42,7 +42,7 @@ export const AuthProvider = ({children}) => {
 
     const login = (email, password) => {
 
-        const usersArry = JSON.parse(localStorage.getItem('users'));
+        const usersArry = getUsersFromLs();
 
         const foundUser = usersArry.find(e => e.email === email && e.password === password)
 
@@ -58,26 +58,31 @@ export const AuthProvider = ({children}) => {
             setUser(loggedUser);
             navigate("/");
         } else {
-            alert("Credenciais incorretas")
+            alert("Credenciais incorretas!")
             navigate("/login");
         }
     };
 
     const signUp = (email, password) => {
-        
-        const newUser = {
-            email,
-            password
+
+        if (getUsersFromLs().find(e => e.email === email)) {
+            alert("email já cadastrado!");
+        } else {
+            
+            const newUser = {
+                email,
+                password
+            }
+
+            users.push(newUser)
+            localStorage.setItem('users',JSON.stringify(users));
+
+            console.log(localStorage.getItem('users'));
+
+            // após o usuário criar a conta ele é automaticamente logado 
+            localStorage.setItem("user", JSON.stringify({id: "1", email}));
+            navigate("/");
         }
-
-        users.push(newUser)
-        localStorage.setItem('users',JSON.stringify(users));
-
-        console.log(localStorage.getItem('users'));
-
-        // após o usuário criar a conta ele é automaticamente logado 
-        localStorage.setItem("user", JSON.stringify({id: "1", email}));
-        navigate("/");
     };
 
     const logout = () => {
