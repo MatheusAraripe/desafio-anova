@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-h2 {
+.form-title {
     position: absolute;
     width: 546px;
     height: 35px;
@@ -26,7 +26,7 @@ h2 {
     text-align: center;
 }
 
-input{
+.login-input{
     background: transparent;
     border: none;
     border-bottom: 1px solid $withe;
@@ -42,7 +42,7 @@ input{
     opacity: 0.5; /* Firefox */
 }
 
-button {
+.login-btn {
     border-radius: 8px;
     background-color: $btn-green;
     width: 357px;
@@ -56,7 +56,7 @@ button {
     margin-bottom: 10px;
 }
 
-button:hover{
+.login-btn:hover{
     background-color: $btn-hover-green;
     cursor: pointer;
 }

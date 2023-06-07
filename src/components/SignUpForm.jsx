@@ -44,10 +44,11 @@ const SignUpForm = () => {
 
   return (
     <div className="login-form">
-        <h2>Cadastrar</h2>
+        <h2 className='form-title'>Cadastrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
             <div className="form-group">
                 <input
+                className='login-input'
                 type="email"
                 placeholder="usuario@ntendencia.com.br"
                 {...register("email")}
@@ -58,6 +59,7 @@ const SignUpForm = () => {
             </div>
             <div className="form-group">
                 <input
+                className='login-input'
                 type="password"
                 placeholder="Senha"
                 {...register("password")}
@@ -68,6 +70,7 @@ const SignUpForm = () => {
             </div>
             <div className="form-group">
                 <input
+                className='login-input'
                 type="password"
                 placeholder="Confirmar senha"
                 {...register("confirmPassword")}
@@ -76,7 +79,7 @@ const SignUpForm = () => {
                 {errors.confirmPassword?.message}
                 </span>
             </div>
-            <button type="submit">Cadastrar</button>
+            <button className="login-btn" type="submit">Cadastrar</button>
         </form>
     </div>
   )

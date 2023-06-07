@@ -29,12 +29,14 @@ const LoginForm = () => {
   };
 
   return (
+
     <>
       <div className="login-form">
-        <h2>Entrar</h2>
+        <h2 className='form-title'>Entrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
           <div className="form-group">
             <input
+              className='login-input'
               type="email"
               placeholder="usuario@ntendencia.com.br"
               {...register("email")}
@@ -45,6 +47,7 @@ const LoginForm = () => {
           </div>
           <div className="form-group">
             <input
+              className='login-input'
               type="password"
               placeholder="Senha"
               {...register("password")}
@@ -53,7 +56,7 @@ const LoginForm = () => {
               {errors.email?.message}
             </span>
           </div>
-          <button type="submit">Entrar</button>
+          <button className="login-btn" type="submit">Entrar</button>
         </form>
         <Link to="/signup" className="link-login">Cadastrar</Link>
       </div>
