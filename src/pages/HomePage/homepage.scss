@@ -20,3 +20,31 @@
 .home-page-title{
     margin: 5rem 0 2rem 0;
 }
+
+.dropdown-menu {
+  width: auto;
+  position: absolute;
+  top: 60px;
+  list-style: none;
+  text-align: start;
+}
+
+.dropdown-menu li {
+  background: #000;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: #333;
+}
+
+.drop-menu {
+  display: none;
+}
+
+.menu-items {
+  display: grid;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+}
