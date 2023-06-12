@@ -2,6 +2,8 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 
+import Button from './Button';
+
 import { AuthContext } from '../contexts/auth';
 
 // React hook form
@@ -57,7 +59,7 @@ const LoginForm = () => {
               {errors.email?.message}
             </span>
           </div>
-          <button className="login-btn" type="submit">Entrar</button>
+          <Button button = "Entrar" />
         </form>
         <Link to="/signup" className="link-login">Cadastrar</Link>
       </div>

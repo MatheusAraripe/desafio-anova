@@ -1,5 +1,7 @@
 import React, {useContext} from 'react'
 
+import Button from './Button';
+
 
 import { AuthContext } from '../contexts/auth';
 
@@ -80,7 +82,7 @@ const SignUpForm = () => {
                 {errors.confirmPassword?.message}
                 </span>
             </div>
-            <button className="login-btn" type="submit">Cadastrar</button>
+            <Button button = "Cadastrar" />
         </form>
     </div>
   )
