@@ -1,14 +1,20 @@
 import React from 'react'
 
-function Input({type, placeholder, register }) {
+function Input({name, type, placeholder, register, error}) {
   
   return (
-    <input
-        className='login-input'
-        type={type}
-        placeholder={placeholder}
-        {...register(type)}
-    />
+    <div className="form-group">
+        <input
+            className='login-input'
+            type={type}
+            name={name}
+            placeholder={placeholder}
+            {...register(name)}
+        />
+        <span className="error">
+            {error}
+        </span>
+    </div>
   )
 }
 

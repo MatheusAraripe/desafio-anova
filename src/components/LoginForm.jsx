@@ -37,26 +37,23 @@ const LoginForm = () => {
       <div className="login-form">
         <h2 className='form-title'>Entrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
-          <div className="form-group">
-            <Input
-              type = "email"
-              placeholder="usuario@ntendencia.com.br"
-              register={register}
-            />
-            <span className="error">
-              {errors.email?.message}
-            </span>
-          </div>
-          <div className="form-group">
-            <Input
-              type="password"
-              placeholder="Senha"
-              register = {register}
-            />
-            <span className="error">
-              {errors.password?.message}
-            </span>
-          </div>
+          
+          <Input
+            type = "email"
+            name="email"
+            placeholder="usuario@ntendencia.com.br"
+            register={register}
+            error={errors.email?.message}
+          />
+
+          <Input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            register = {register}
+            error={errors.password?.message}
+          />
+
           <Button button = "Entrar" />
         </form>
         <Link to="/signup" className="link-login">Cadastrar</Link>

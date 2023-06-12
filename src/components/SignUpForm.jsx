@@ -48,37 +48,31 @@ const SignUpForm = () => {
     <div className="login-form">
         <h2 className='form-title'>Cadastrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
-            <div className="form-group">
-                <Input
-                type="email"
-                placeholder="usuario@ntendencia.com.br"
-                register={register}
-                />
-                
-                <span className="error">
-                {errors.email?.message}
-                </span>
-            </div>
-            <div className="form-group">
-                <Input
-                type="password"
-                placeholder="Senha"
-                register={register}
-                />
-                <span className="error">
-                {errors.password?.message}
-                </span>
-            </div>
-            <div className="form-group">
-                <Input
-                type="password"
-                placeholder="Confirmar senha"
-                register={register}
-                />
-                <span className="error">
-                {errors.confirmPassword?.message}
-                </span>
-            </div>
+
+            <Input
+            type="email"
+            name="email"
+            placeholder="usuario@ntendencia.com.br"
+            register={register}
+            error={errors.email?.message}
+            />
+            
+            <Input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            register={register}
+            error={errors.password?.message}
+            />
+
+            <Input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirmar senha"
+            register={register}
+            error = {errors.confirmPassword?.message}
+            />
+
             <Button button = "Cadastrar" />
         </form>
     </div>
