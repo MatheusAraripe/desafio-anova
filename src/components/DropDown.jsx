@@ -1,9 +1,23 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import MenuItems from './MenuItems'
 
 function DropDown() {
+
+    const menuItens = [
+        {
+            title: 'Home',
+            path: '/'
+        },
+        {
+            title: 'Entrar',
+            path: '/login'
+        },
+        {
+            title: 'Cadastrar',
+            path: '/signup'
+        },
+    ]
 
     const [click, setClick] = useState(false)
 
@@ -13,7 +27,7 @@ function DropDown() {
         <>
             <section className='drop-section'>
                 <ul onClick={handleClick} className={click ? 'drop-menu' : 'dropdown-menu'}>
-                    {MenuItems.map((item, index) => {
+                    {menuItens.map((item, index) => {
                         return (
                             <li key={index}>
                                 <Link className='menu-items' to={item.path} onClick={() => setClick(false)}>
