@@ -3,6 +3,7 @@ import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from './Button';
+import Input from './Input';
 
 import { AuthContext } from '../contexts/auth';
 
@@ -27,7 +28,6 @@ const LoginForm = () => {
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   const handleSubmit = (data) => {
-    console.log(data);
     login(data.email, data.password)
   };
 
@@ -38,25 +38,23 @@ const LoginForm = () => {
         <h2 className='form-title'>Entrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
           <div className="form-group">
-            <input
-              className='login-input'
-              type="email"
+            <Input
+              type = "email"
               placeholder="usuario@ntendencia.com.br"
-              {...register("email")}
+              register={register}
             />
             <span className="error">
               {errors.email?.message}
             </span>
           </div>
           <div className="form-group">
-            <input
-              className='login-input'
+            <Input
               type="password"
               placeholder="Senha"
-              {...register("password")}
+              register = {register}
             />
             <span className="error">
-              {errors.email?.message}
+              {errors.password?.message}
             </span>
           </div>
           <Button button = "Entrar" />

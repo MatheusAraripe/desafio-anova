@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 
 import Button from './Button';
-
+import Input from './Input';
 
 import { AuthContext } from '../contexts/auth';
 
@@ -49,11 +49,10 @@ const SignUpForm = () => {
         <h2 className='form-title'>Cadastrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
             <div className="form-group">
-                <input
-                className='login-input'
+                <Input
                 type="email"
                 placeholder="usuario@ntendencia.com.br"
-                {...register("email")}
+                register={register}
                 />
                 
                 <span className="error">
@@ -61,22 +60,20 @@ const SignUpForm = () => {
                 </span>
             </div>
             <div className="form-group">
-                <input
-                className='login-input'
+                <Input
                 type="password"
                 placeholder="Senha"
-                {...register("password")}
+                register={register}
                 />
                 <span className="error">
                 {errors.password?.message}
                 </span>
             </div>
             <div className="form-group">
-                <input
-                className='login-input'
+                <Input
                 type="password"
                 placeholder="Confirmar senha"
-                {...register("confirmPassword")}
+                register={register}
                 />
                 <span className="error">
                 {errors.confirmPassword?.message}
