@@ -43,3 +43,19 @@
     margin-right: 32px;
 }
 
+.close-modal-btn{
+    width: 147px;
+    height: 52px;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    text-align: center;
+    border: none;
+    color: #2C2929;
+    background: #999999;
+    border-radius: 8px;
+    cursor: pointer;
+}
