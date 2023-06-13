@@ -26,42 +26,6 @@
     text-align: center;
 }
 
-.login-input{
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid $withe;
-    right: 92px;
-    width: 357px;
-    margin-top: 60px;
-    color: $withe;  
-}
-
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: $withe;
-    opacity: 0.5; /* Firefox */
-}
-
-.login-btn {
-    border-radius: 8px;
-    background-color: $btn-green;
-    width: 357px;
-    height: 52px;
-    right: 92px;
-    color: $withe;
-    border: none;
-    
-    @include mixins.big-btn-typography;
-
-    margin-bottom: 10px;
-    margin-top: 60px;
-}
-
-.login-btn:hover{
-    background-color: $btn-hover-green;
-    cursor: pointer;
-}
-
 .link-login{
     position: absolute;
     width: 546px;
@@ -70,11 +34,4 @@
     top: calc(54% - 15px/2 + 94.5px);
     color: $withe;
     @include mixins.link-typography;
-}
-.form-group{
-    display:grid;
-    
-}
-.error{
-    color: $error-validation; 
 }

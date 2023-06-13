@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/input.scss";
 
 function Input({name, type, placeholder, register, error}) {
   

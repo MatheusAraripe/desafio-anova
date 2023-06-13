@@ -1,0 +1,27 @@
+@import "./variables";
+
+.form-group{
+    display:grid;
+    
+}
+
+.login-input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $withe;
+    right: 92px;
+    width: 357px;
+    margin-top: 60px;
+    color: $withe;  
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $withe;
+    opacity: 0.5; /* Firefox */
+}
+
+
+.error{
+    color: $error-validation; 
+}

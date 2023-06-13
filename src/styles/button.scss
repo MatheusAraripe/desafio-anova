@@ -1,0 +1,22 @@
+@use './mixins';
+@import './variables';
+
+.login-btn {
+    border-radius: 8px;
+    background-color: $btn-green;
+    width: 357px;
+    height: 52px;
+    right: 92px;
+    color: $withe;
+    border: none;
+    
+    @include mixins.big-btn-typography;
+
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+.login-btn:hover{
+    background-color: $btn-hover-green;
+    cursor: pointer;
+}
