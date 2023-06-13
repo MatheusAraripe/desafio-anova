@@ -20,3 +20,26 @@
     background-color: $btn-hover-green;
     cursor: pointer;
 }
+.social-button-container{
+    position: absolute;
+    right: 48px;
+}
+.social-button{
+    background-color: $green;
+    border-radius: 8px;
+    color: $white;
+    width: 171px;
+    height: 51px;
+    border: none;
+    margin-top: 40px;
+}
+
+.social-button:hover{
+    background-color: $btn-green;
+    cursor: pointer;
+}
+
+.add{
+    margin-right: 32px;
+}
+

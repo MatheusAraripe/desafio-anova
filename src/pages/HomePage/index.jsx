@@ -14,6 +14,10 @@ function HomePage() {
   return (
     <div>
         <NavBar />
+        <div className="social-button-container">
+          <button className='social-button add'>ADD CONTATO</button>
+          <button className='social-button invite'>ENVIAR CONVITE</button>
+        </div>
         <h1 className='home-page-title'>
             Home page privada!
         </h1>
