@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import "../styles/dropdown.scss";
+
 function DropDown() {
 
     const menuItens = [

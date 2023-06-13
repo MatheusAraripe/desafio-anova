@@ -5,6 +5,8 @@ import { AuthContext } from '../contexts/auth';
 import { Link } from 'react-router-dom';
 import DropDown from './DropDown';
 
+import "../styles/navbar.scss";
+
 
 function NavBar() {
 
