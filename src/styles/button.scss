@@ -43,19 +43,37 @@
     margin-right: 32px;
 }
 
-.close-modal-btn{
-    width: 147px;
+.modal-btn{
     height: 52px;
     font-family: $font;
     font-style: normal;
-    font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    /* identical to box height */
     text-align: center;
     border: none;
+    border-radius: 8px;
+    margin-top: 48px;
+    cursor: pointer;
+}
+.close{
+    width: 147px;
     color: #2C2929;
     background: #999999;
-    border-radius: 8px;
-    cursor: pointer;
+    font-weight: 500;
+    margin-right: 21px;
+}
+
+.add-user{
+    width: 201px;
+    background: #029456;
+    font-weight: 700;
+    margin-right: 20px;
+    color: white;
+}
+
+.save-user{
+    background: #01321E;
+    width: 221px;
+    color: white;
+    font-weight: 500;
 }
