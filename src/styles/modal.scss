@@ -47,3 +47,60 @@
     display: flex;
     margin-left: 190px;
 }
+
+.invite-modal-container{
+    width: 315px;
+    height: 523px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.invite-icon-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32.18px;
+}
+
+.invite-icon{
+    width: 117px;
+    height: 137.82px;
+    color: $green;
+}
+
+.invite-modal-title{
+    width: 315px;
+    height: 26px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+    color: #01321E;
+}
+
+.invite-modal-text{
+    width: 315px;
+    height: 31px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #6D6D6D;
+    margin-top: 16px;
+}
+
+.invite-email-container{
+    justify-content: center;
+    display: flex;
+}
+
+.footer-invite{
+    justify-content: center;
+    display: flex;
+}
