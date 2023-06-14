@@ -25,3 +25,33 @@
 .error{
     color: $error-validation; 
 }
+
+.user-info{
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 8px;
+    height: 52px;
+}
+
+.name{
+    width: 610px;
+}
+.unidade{
+    width: 178px;
+    margin-right: 16px;
+}
+
+.ramal{
+    width: 85px;
+    margin-right: 16px;
+}
+
+.email{
+    width: 315px;
+}
+
+.tel{
+    width: 279px;
+}

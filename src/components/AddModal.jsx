@@ -7,15 +7,15 @@ function AddModal({setOpenModal}) {
         <div className="modal-container">
             <div className="body">
                 <div className="input-name">
-                  <input type="text" className="user-name" name='name'/>
+                  <input type="text" className="user-info name" name='name'/>
                 </div>
                 <div className="input-informations">
-                  <input type="text" />
-                  <input type="number" />
-                  <input type="email" name='email' />
+                  <input type="text" className="user-info unidade"/>
+                  <input type="number" className="user-info ramal"/>
+                  <input type="email" name='email' className="user-info email"/>
                 </div>
                 <div className="input-tel">
-                  <input type="tel" />
+                  <input type="tel" className='user-info tel'/>
                 </div>
             </div>
             <div className="footer">
