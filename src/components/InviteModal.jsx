@@ -35,7 +35,7 @@ function InviteModal({setOpenInviteModal}) {
                     <div className="invite-email-container">
                         <input type="email" name='email' className='invite-email' {...register("email")}/>
                     </div>
-                    <span className="error">
+                    <span className="error invite-erro">
                         {errors.email?.message}
                     </span>
                 </div>
