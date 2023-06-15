@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useContext} from 'react'
 
 import Button from './Button';
@@ -56,7 +57,7 @@ const SignUpForm = () => {
             register={register}
             error={errors.email?.message}
             />
-            
+
             <Input
             type="password"
             name="password"

@@ -2,7 +2,7 @@
 
 .form-group{
     display:grid;
-    
+
 }
 
 .login-input{
@@ -12,7 +12,7 @@
     right: 92px;
     width: 357px;
     margin-top: 60px;
-    color: $white;  
+    color: $white;
 }
 
 
@@ -23,7 +23,7 @@
 
 
 .error{
-    color: $error-validation; 
+    color: $error-validation;
 }
 
 .user-info{
@@ -37,6 +37,10 @@
 
 .name{
     width: 610px;
+}
+
+.error-input{
+  border: 2px solid #ff2b2b;
 }
 .unidade{
     width: 178px;

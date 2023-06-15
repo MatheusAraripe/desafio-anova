@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import "../styles/modal.scss"
 import {BsPersonFillAdd} from "react-icons/bs"
@@ -15,6 +16,7 @@ const schema = yup.object({
     tel: yup.string().required("Campo obrigaório")
 })
 
+// eslint-disable-next-line react/prop-types
 function AddModal({setOpenModal}) {
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
@@ -32,18 +34,18 @@ function AddModal({setOpenModal}) {
                 </div>
                 <div className="inputs-container">
                   <div className="input-name">
-                    <input type="text" className="user-info name" name='name' {...register("name")}/>
                     <span className="error invite-erro">
                       {errors.name?.message}
                     </span>
+                    <input type="text" className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
                   </div>
                   <div className="input-informations">
                     <input type="text" className="user-info unidade" name='unidade'/>
-                    <input type="number" className="user-info ramal" name='ramal' {...register("ramal")}/>
-                    <input type="email" name='email' className="user-info email" {...register("email")}/>
+                    <input type="number" className={errors.ramal? "user-info ramal error-input": "user-info ramal"} name='ramal' {...register("ramal")}/>
+                    <input type="email" name='email' className={errors.email? "user-info email error-input" :"user-info email"} {...register("email")}/>
                   </div>
                   <div className="input-tel">
-                    <input type="tel" className='user-info tel' name='tel' {...register("tel")}/>
+                    <input type="tel" className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
                   </div>
                 </div>
             </div>
