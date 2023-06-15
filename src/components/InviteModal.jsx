@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import {BsEnvelopePaperHeartFill} from "react-icons/bs"
 
@@ -11,6 +12,7 @@ const schema = yup.object({
     email: yup.string().required("Campo obrigaório")
 })
 
+// eslint-disable-next-line react/prop-types
 function InviteModal({setOpenInviteModal}) {
 
     const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
@@ -33,7 +35,7 @@ function InviteModal({setOpenInviteModal}) {
                         <p className='invite-modal-text'>Informe o email de um colaborador para que ele receba um convite de cadastro</p>
                     </div>
                     <div className="invite-email-container">
-                        <input type="email" name='email' className='invite-email' {...register("email")}/>
+                        <input type="email" name='email' className={errors.email? "invite-email error-input" :"invite-email"} {...register("email")}/>
                     </div>
                     <span className="error invite-erro">
                         {errors.email?.message}
