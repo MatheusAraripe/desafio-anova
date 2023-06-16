@@ -12,7 +12,7 @@ const options = [
 function Baner() {
   return (
     <div className='baner-container'>
-      <Select options={options} className='unidade-input' />
+      <Select options={options} className='unidade-input'/>
       <input type="text" name="" id="" className='nome-input'/>
     </div>
   )
