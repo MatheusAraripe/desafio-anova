@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import Select from './Select'
 import "../styles/baner.scss"
 
 function Baner() {
   return (
     <div className='baner-container'>
-      <input type="text" className="input unidade-input" />
-      <input type="text" name="" id="" className='input nome-input'/>
+      <Select />
+      <input type="text" name="" id="" className='nome-input'/>
     </div>
   )
 }
