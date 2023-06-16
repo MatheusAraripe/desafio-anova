@@ -9,7 +9,7 @@ function Baner() {
   return (
     <div className='baner-container'>
       <Select selected={selected} setSelected={setSelected}/>
-      <input type="text" name="" id="" className='nome-input'/>
+      <input type="text" name="" id="" className='nome-input' placeholder='Digite o nome do colaborador'/>
     </div>
   )
 }

@@ -29,10 +29,10 @@ function HomePage() {
 
         <Baner />
 
-        <h1 className='home-page-title'>
+        {/* <h1 className='home-page-title'>
             Home page privada!
         </h1>
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout}>Logout</button> */}
     </div>
   )
 }
