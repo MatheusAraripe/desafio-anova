@@ -6,16 +6,32 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #6D6D6D;
     padding-right: 18px;
     padding-left: 16.57px;
 }
 
 .select-btn{
+    color: #6D6D6D;
     height: 51px;
     width: 245px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+}
+
+.select-options{
+    margin-top: 4px;
+}
+.select-option{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: black;
+    padding: 10px;
+}
+
+.select-option:hover{
+    background-color: #d1d1d1;
 }
 
