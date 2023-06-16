@@ -3,6 +3,7 @@ import React ,{useContext, useState} from 'react'
 import { AuthContext } from '../../contexts/auth';
 import NavBar from '../../components/NavBar';
 import AddModal from '../../components/AddModal';
+import Baner from "../../components/Baner"
 import InviteModal from '../../components/InviteModal';
 import './homepage.scss'
 
@@ -25,6 +26,9 @@ function HomePage() {
         </div>
         {modalOpen && <AddModal setOpenModal={setModalOpen} />}
         {inviteModalOpen && <InviteModal setOpenInviteModal={setInviteModalOpen} />}
+
+        <Baner />
+
         <h1 className='home-page-title'>
             Home page privada!
         </h1>
