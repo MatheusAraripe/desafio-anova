@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import "../styles/modal.scss"
-import {BsPersonFillAdd} from "react-icons/bs"
+import {FaUserCircle} from "react-icons/fa"
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -30,7 +30,7 @@ function AddModal({setOpenModal}) {
           <form onSubmit={onSubmit(handleSubmit)}>
             <div className="body">
                 <div className="add-pic">
-                  <BsPersonFillAdd className='add-user-icon'/>
+                  <FaUserCircle className='add-user-icon'/>
                 </div>
                 <div className="inputs-container">
                   <div className="input-name">
