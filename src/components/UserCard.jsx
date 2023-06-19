@@ -14,8 +14,8 @@ function UserCard() {
                     Matheus Araripe
                 </h2>
                 <div className="interactive-icons">
-                    <FaPencilAlt />
-                    <FaTrashAlt />
+                    <FaPencilAlt className='interactive-icon'/>
+                    <FaTrashAlt className='interactive-icon'/>
                 </div>
             </div>
             <div className="card-content">

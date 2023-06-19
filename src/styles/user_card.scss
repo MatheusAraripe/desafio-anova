@@ -22,7 +22,6 @@
     margin-left: 16px;
     margin-right: 16px;
     width: 100%;
-    
 }
 
 .user-image-icon{
@@ -33,4 +32,49 @@
 .card-head{
     display: flex;
     justify-content: space-between;
+}
+
+.user-name{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.interactive-icon{
+    margin-right: 8.38px;
+    color: $btn-green;
+}
+
+.card-content{
+    margin-top: 4px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.user-unidade{
+    line-height: 14px;
+    color: #07020D;
+    opacity: 0.4;
+}
+
+.user-ramal{
+    margin-top: 8px;
+    color: #029456;
+}
+
+.user-tel{
+    margin-top: 8px;
+    color: #07020D;
+    opacity: 0.4;
+}
+
+.user-email{
+    line-height: 18px;
+    color: #07020D;
+    margin-top: 8px;
+    opacity: 0.4;
 }
