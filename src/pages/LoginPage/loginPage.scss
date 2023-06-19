@@ -20,6 +20,7 @@
     height: 35px;
     right: 0px;
     top: 135px;
+    font-family: $font;
 
     @include mixins.h2-typography;
 

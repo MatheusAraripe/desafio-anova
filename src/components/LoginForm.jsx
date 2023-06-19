@@ -54,7 +54,7 @@ const LoginForm = () => {
             error={errors.password?.message}
           />
 
-          <Button button = "Entrar" />
+          <Button button = "ENTRAR" />
         </form>
         <Link to="/signup" className="link-login">Cadastrar</Link>
       </div>

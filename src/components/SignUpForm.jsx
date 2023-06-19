@@ -74,7 +74,7 @@ const SignUpForm = () => {
             error = {errors.confirmPassword?.message}
             />
 
-            <Button button = "Cadastrar" />
+            <Button button = "CADASTRAR" />
         </form>
     </div>
   )
