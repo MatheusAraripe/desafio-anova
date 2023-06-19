@@ -6,6 +6,7 @@ import AddModal from '../../components/AddModal';
 import Baner from "../../components/Baner"
 import InviteModal from '../../components/InviteModal';
 import './homepage.scss'
+import UserCard from '../../components/UserCard';
 
 function HomePage() {
 
@@ -33,6 +34,8 @@ function HomePage() {
             Home page privada!
         </h1>
         <button onClick={handleLogout}>Logout</button> */}
+
+        <UserCard />
     </div>
   )
 }
