@@ -37,15 +37,15 @@ function AddModal({setOpenModal}) {
                     <span className="error invite-erro">
                       {errors.name?.message}
                     </span>
-                    <input type="text" className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
+                    <input type="text" placeholder='Nome' className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
                   </div>
                   <div className="input-informations">
-                    <input type="text" className="user-info unidade" name='unidade'/>
-                    <input type="number" className={errors.ramal? "user-info ramal error-input": "user-info ramal"} name='ramal' {...register("ramal")}/>
-                    <input type="email" name='email' className={errors.email? "user-info email error-input" :"user-info email"} {...register("email")}/>
+                    <input type="text" placeholder='Unidade' className="user-info unidade" name='unidade'/>
+                    <input type="number" placeholder='Ramal' className={errors.ramal? "user-info ramal error-input": "user-info ramal"} name='ramal' {...register("ramal")}/>
+                    <input type="email" placeholder='Email' name='email' className={errors.email? "user-info email error-input" :"user-info email"} {...register("email")}/>
                   </div>
                   <div className="input-tel">
-                    <input type="tel" className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                    <input type="tel" placeholder='Telefone' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
                   </div>
                 </div>
             </div>

@@ -35,7 +35,7 @@ function InviteModal({setOpenInviteModal}) {
                         <p className='invite-modal-text'>Informe o email de um colaborador para que ele receba um convite de cadastro</p>
                     </div>
                     <div className="invite-email-container">
-                        <input type="email" name='email' className={errors.email? "invite-email error-input" :"invite-email"} {...register("email")}/>
+                        <input type="email" name='email' placeholder='Email' className={errors.email? "invite-email error-input" :"invite-email"} {...register("email")}/>
                     </div>
                     <span className="error invite-erro">
                         {errors.email?.message}

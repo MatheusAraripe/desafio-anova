@@ -16,7 +16,7 @@
 }
 
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.login-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $white;
     opacity: 0.5; /* Firefox */
 }
@@ -33,6 +33,16 @@
     border: 1px solid #999999;
     border-radius: 8px;
     height: 52px;
+    padding-left: 16px;
+}
+
+.user-info::placeholder{
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #999999;
 }
 
 .name{
@@ -64,7 +74,17 @@
     margin-top: 32px;
     background: #FFFFFF;
     border: 1px solid rgba(153, 153, 153, 0.5);
+    padding-left: 16px;
     border-radius: 4px;
+}
+
+.invite-email::placeholder{
+    color: #999999;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .error-input{
