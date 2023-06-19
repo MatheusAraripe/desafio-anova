@@ -7,7 +7,7 @@
   background-color: rgba(2, 148, 86, 0.8);
   display: flex;
   justify-content: center;
-  align-items:last baseline;
+  align-items: self-end;
   padding-bottom: 31px;
 }
 
@@ -21,7 +21,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 19px;
   padding-left: 10px;
   
 }
@@ -33,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 51px;
+  height: 53.5px;
   width: 49px;
   background-color: #01321E;
   cursor: pointer;

@@ -11,9 +11,6 @@ function Baner() {
     <div className='baner-container'>
       <Select selected={selected} setSelected={setSelected}/>
       <input type="text" name="" id="" className='nome-input' placeholder='Digite o nome do colaborador'/>
-      {/* <button type='submit' className="search-icon-container">
-       <BiSearchAlt className='search-icon'/>
-      </button> */}
       <div className="search-icon-container">
         <BiSearchAlt className='search-icon'/>
       </div>
