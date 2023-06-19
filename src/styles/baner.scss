@@ -25,6 +25,27 @@
   padding-left: 10px;
   
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.nome-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #6D6D6D;
+}
+
+.search-icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 51px;
+  width: 49px;
+  background-color: #01321E;
+  cursor: pointer;
+}
+
+.search-icon-container:hover{
+  background-color: #002415;
+}
+
+
+.search-icon{
+  width: 25.72px;
+  height: 27px;
+  color: white;
 }
