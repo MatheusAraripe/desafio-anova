@@ -13,7 +13,7 @@ const schema = yup.object({
 })
 
 // eslint-disable-next-line react/prop-types
-function InviteModal({setOpenInviteModal}) {
+function InviteModal({setOpenInviteModal, title, text, btnText, icon}) {
 
     const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
     const handleSubmit = (data) => {
@@ -31,8 +31,8 @@ function InviteModal({setOpenInviteModal}) {
                         <div className="invite-icon-container">
                             <BsEnvelopePaperHeartFill className='invite-icon'/>
                         </div>
-                        <h3 className='invite-modal-title'>Convide um colaborador</h3>
-                        <p className='invite-modal-text'>Informe o email de um colaborador para que ele receba um convite de cadastro</p>
+                        <h3 className='invite-modal-title'>{title}</h3>
+                        <p className='invite-modal-text'>{text}</p>
                     </div>
                     <div className="invite-email-container">
                         <input type="email" name='email' placeholder='Email' className={errors.email? "invite-email error-input" :"invite-email"} {...register("email")}/>
@@ -42,7 +42,7 @@ function InviteModal({setOpenInviteModal}) {
                     </span>
                 </div>
                 <div className="footer-invite">
-                    <button className='invite-user-btn'>ENVIAR CONVITE</button>
+                    <button className='invite-user-btn'>{btnText}</button>
                 </div>
             </form>
         </div>

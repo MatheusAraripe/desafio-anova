@@ -55,9 +55,20 @@ function HomePage() {
 
   return (
     <>
+      {/*modal de deletar card*/}
       {deleteModalOpen && <DeleteModal setOpenDeleteModal = {setDeleteModalOpen}/>}
+
+      {/*modal de adicionar usuário*/}
       {modalOpen && <AddModal setOpenModal={setModalOpen} />}
-      {inviteModalOpen && <InviteModal setOpenInviteModal={setInviteModalOpen} />}
+
+      {/*modal de convidar usuário*/}
+      {inviteModalOpen && <InviteModal 
+      setOpenInviteModal={setInviteModalOpen} 
+      title={"Convide um colaborador"}
+      text={"Informe o email de um colaborador para que ele receba um convite de cadastro"}
+      btnText={"ENVIAR CONVITE"}/>
+      }
+
       <div className='home-body'>
           <NavBar />
           <div className="social-button-container">
