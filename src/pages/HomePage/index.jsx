@@ -10,16 +10,49 @@ import UserCard from '../../components/UserCard';
 
 function HomePage() {
 
+  const users = [
+    {
+      name: "Matheus Araripe",
+      unidade: "Rio de Janeiro",
+      ramal: "Ramal 282",
+      tel: "(21)XXXXX-XXXX",
+      email: "email@ntendencia.com"
+    },
+    {
+      name: "Matheus Araripe",
+      unidade: "Rio de Janeiro",
+      ramal: "Ramal 282",
+      tel: "(21)XXXXX-XXXX",
+      email: "email@ntendencia.com"
+    },
+    {
+      name: "Matheus Araripe",
+      unidade: "Rio de Janeiro",
+      ramal: "Ramal 282",
+      tel: "(21)XXXXX-XXXX",
+      email: "email@ntendencia.com"
+    },
+    {
+      name: "Matheus Araripe",
+      unidade: "Rio de Janeiro",
+      ramal: "Ramal 282",
+      tel: "(21)XXXXX-XXXX",
+      email: "email@ntendencia.com"
+    },
+    
+
+  ]
+
   const [modalOpen, setModalOpen] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
 
-  const {logout} = useContext(AuthContext);
-  const handleLogout = () => {
-    logout()
-  };
+  // const {logout} = useContext(AuthContext);
+  // const handleLogout = () => {
+  //   logout()
+  // };
 
   return (
-    <div>
+    <div className='home-body'>
         <NavBar />
         <div className="social-button-container">
           <button className='social-button add' onClick={()=>setModalOpen(true)}>ADD CONTATO</button>
@@ -34,8 +67,19 @@ function HomePage() {
             Home page privada!
         </h1>
         <button onClick={handleLogout}>Logout</button> */}
-
-        <UserCard />
+        <div className="cards-section">
+          {users.map((item, index) => {
+            return(
+              <UserCard key={index} 
+              name={item.name}
+              unidade={item.unidade}
+              ramal={item.ramal}
+              tel={item.tel}
+              email={item.email}
+              />
+            )
+          })}
+        </div>
     </div>
   )
 }

@@ -4,3 +4,13 @@
 .home-page-title{
     margin: 5rem 0 2rem 0;
 }
+
+.cards-section{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    position: absolute;
+    left: 128px;
+    right: 128px;
+    top: 514px;
+}
