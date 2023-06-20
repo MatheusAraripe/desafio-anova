@@ -2,7 +2,7 @@ import React from 'react'
 import {FaPencilAlt, FaTrashAlt, FaUserCircle} from "react-icons/fa"
 import "../styles/user_card.scss"
 
-function UserCard({name, unidade, ramal, tel, email}) {
+function UserCard({name, unidade, ramal, tel, email, setDeleteModalOpen}) {
   return (
     <div className='user-card-container'>
         <div className="user-card-image">
@@ -15,7 +15,7 @@ function UserCard({name, unidade, ramal, tel, email}) {
                 </h2>
                 <div className="interactive-icons">
                     <FaPencilAlt className='interactive-icon'/>
-                    <FaTrashAlt className='interactive-icon'/>
+                    <FaTrashAlt className='interactive-icon' onClick={() => setDeleteModalOpen(true)}/>
                 </div>
             </div>
             <div className="card-content">
