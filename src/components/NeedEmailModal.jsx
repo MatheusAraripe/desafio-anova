@@ -13,7 +13,7 @@ const schema = yup.object({
 })
 
 // eslint-disable-next-line react/prop-types
-function InviteModal({setOpenInviteModal, title, text, btnText, icon}) {
+function NeedEmailModal({setOpenInviteModal, title, text, btnText, icon}) {
 
     const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
     const handleSubmit = (data) => {
@@ -51,4 +51,4 @@ function InviteModal({setOpenInviteModal, title, text, btnText, icon}) {
   )
 }
 
-export default InviteModal;
+export default NeedEmailModal;

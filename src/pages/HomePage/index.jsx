@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/auth';
 import NavBar from '../../components/NavBar';
 import AddModal from '../../components/AddModal';
 import Baner from "../../components/Baner"
-import InviteModal from '../../components/InviteModal';
+import NeedEmailModal from '../../components/NeedEmailModal';
 import DeleteModal from '../../components/DeleteModal';
 import './homepage.scss'
 import UserCard from '../../components/UserCard';
@@ -62,7 +62,7 @@ function HomePage() {
       {modalOpen && <AddModal setOpenModal={setModalOpen} />}
 
       {/*modal de convidar usuário*/}
-      {inviteModalOpen && <InviteModal 
+      {inviteModalOpen && <NeedEmailModal 
       setOpenInviteModal={setInviteModalOpen} 
       title={"Convide um colaborador"}
       text={"Informe o email de um colaborador para que ele receba um convite de cadastro"}

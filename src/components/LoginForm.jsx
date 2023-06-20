@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from './Button';
 import Input from './Input';
+import NeedEmailModal from './NeedEmailModal';
 
 import { AuthContext } from '../contexts/auth';
 
@@ -31,9 +32,17 @@ const LoginForm = () => {
     login(data.email, data.password)
   };
 
+  const [recoverModalOpen, setRecoverModalOpen] = useState(false);
+
   return (
 
     <>
+      {recoverModalOpen && <NeedEmailModal 
+      setOpenInviteModal={setRecoverModalOpen} 
+      title={"Esqueceu sua senha?"}
+      text={"Informe o email associado com a sua conta"}
+      btnText={"RECUPERAR SENHA"}/>
+      }
       <div className="login-form">
         <h2 className='form-title'>Entrar</h2>
         <form onSubmit={onSubmit(handleSubmit)}>
@@ -56,7 +65,7 @@ const LoginForm = () => {
 
           <Button button = "ENTRAR" />
         </form>
-        <Link className="link-login">Esqueceu sua senha?</Link>
+        <Link className="link-login" onClick={() => setRecoverModalOpen(true)}>Esqueceu sua senha?</Link>
       </div>
       <p>logado: {String(authenticated)}</p>
     </>
