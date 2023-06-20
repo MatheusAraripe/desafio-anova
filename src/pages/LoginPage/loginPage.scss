@@ -34,5 +34,13 @@
     right: 0px;
     top: calc(54% - 15px/2 + 94.5px);
     color: $white;
-    @include mixins.link-typography;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    margin-top: 16px;
+    text-align: center;
+    text-decoration: none;
 }

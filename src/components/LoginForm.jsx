@@ -56,7 +56,7 @@ const LoginForm = () => {
 
           <Button button = "ENTRAR" />
         </form>
-        <Link to="/signup" className="link-login">Cadastrar</Link>
+        <Link className="link-login">Esqueceu sua senha?</Link>
       </div>
       <p>logado: {String(authenticated)}</p>
     </>
