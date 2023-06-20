@@ -55,7 +55,7 @@ function HomePage() {
 
   return (
     <>
-      {deleteModalOpen && <DeleteModal />}
+      {deleteModalOpen && <DeleteModal setOpenDeleteModal = {setDeleteModalOpen}/>}
       {modalOpen && <AddModal setOpenModal={setModalOpen} />}
       {inviteModalOpen && <InviteModal setOpenInviteModal={setInviteModalOpen} />}
       <div className='home-body'>
