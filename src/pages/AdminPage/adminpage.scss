@@ -1,0 +1,13 @@
+.admin-title-container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 64px;
+  margin-top: 32px;
+  flex-shrink: 0;
+}
+
+.admin-title{
+  color: #6D6D6D;
+  font-size: 28px;
+  font-family: Roboto;
+}
