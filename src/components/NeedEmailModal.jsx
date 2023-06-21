@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import {BsEnvelopePaperHeartFill} from "react-icons/bs"
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -29,7 +27,7 @@ function NeedEmailModal({setOpenInviteModal, title, text, btnText, icon}) {
                     <div className="invite-text-container">
                         <button onClick={ ()=> setOpenInviteModal(false)}>X</button>
                         <div className="invite-icon-container">
-                            <BsEnvelopePaperHeartFill className='invite-icon'/>
+                            {icon}
                         </div>
                         <h3 className='invite-modal-title'>{title}</h3>
                         <p className='invite-modal-text'>{text}</p>

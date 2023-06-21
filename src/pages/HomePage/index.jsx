@@ -2,6 +2,7 @@
 import React ,{useContext, useState} from 'react'
 import { AuthContext } from '../../contexts/auth';
 import NavBar from '../../components/NavBar';
+import {BsEnvelopePaperHeartFill} from "react-icons/bs"
 import AddModal from '../../components/AddModal';
 import Baner from "../../components/Baner"
 import NeedEmailModal from '../../components/NeedEmailModal';
@@ -63,7 +64,8 @@ function HomePage() {
 
       {/*modal de convidar usuário*/}
       {inviteModalOpen && <NeedEmailModal 
-      setOpenInviteModal={setInviteModalOpen} 
+      setOpenInviteModal={setInviteModalOpen}
+      icon={<BsEnvelopePaperHeartFill className='invite-icon'/>} 
       title={"Convide um colaborador"}
       text={"Informe o email de um colaborador para que ele receba um convite de cadastro"}
       btnText={"ENVIAR CONVITE"}/>

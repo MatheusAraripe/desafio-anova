@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
+import { AiFillLock } from 'react-icons/ai'
 
 import Button from './Button';
 import Input from './Input';
@@ -38,7 +39,8 @@ const LoginForm = () => {
 
     <>
       {recoverModalOpen && <NeedEmailModal 
-      setOpenInviteModal={setRecoverModalOpen} 
+      setOpenInviteModal={setRecoverModalOpen}
+      icon={<AiFillLock className='invite-icon'/>} 
       title={"Esqueceu sua senha?"}
       text={"Informe o email associado com a sua conta"}
       btnText={"RECUPERAR SENHA"}/>
