@@ -20,3 +20,39 @@
 .table-container{
   margin-left: 64px;
 }
+
+thead{
+  border: 1px solid #E5E5E5;
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%), #FFF;
+  width: 1238px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+th{
+  margin: 16px 0 16px 0;
+  padding-top: 16px;
+  margin: 20px;
+  color: #6D6D6D;
+  font-size: 16px;
+  font-family: "Quicksand";
+  font-weight: 700;
+}
+
+.th-name{
+  padding-left: 99px;
+  padding-right: 120px;
+}
+
+.th-ramal{
+  padding-left: 57px;
+  padding-right: 127px;
+}
+.th-email{
+  padding-left: 240px;
+  padding-right: 330px;
+}
+tr{
+  border: 1px solid #E5E5E5;
+  background: #FFF;
+}
