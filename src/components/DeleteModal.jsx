@@ -2,7 +2,7 @@ import React from 'react'
 import "../styles/delete_modal.scss"
 import {MdDeleteForever} from "react-icons/md"
 
-function DeleteModal({setOpenDeleteModal}) {
+function DeleteModal({setOpenDeleteModal, title}) {
   return (
     <div className='modal-background'>
       <div className="delete-modal-container">
@@ -11,7 +11,7 @@ function DeleteModal({setOpenDeleteModal}) {
             <div className="invite-icon-container">
                 <MdDeleteForever className='invite-icon'/>
             </div>
-            <h3 className='invite-modal-title'>Excluir card?</h3>
+            <h3 className='invite-modal-title'>{title}</h3>
             <p className='invite-modal-text'>Essa ação não poderá ser desfeita</p>
           </div>
           <div className="footer-invite">

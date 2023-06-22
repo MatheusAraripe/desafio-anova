@@ -1,11 +1,15 @@
 import React from 'react';
 import {FaPencilAlt, FaTrashAlt} from "react-icons/fa"
 
-const TableAdmin = () => {
+const TableAdmin = ({setDeleteModalOpen}) => {
   const contatos = [
-    { nome: 'João alberto', unidade: 'Rio de Janeiro', ramal: '1234', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'joao@ntendencia.com' },
-    { nome: 'Maria joaquina', unidade: 'Juiz de Fora', ramal: '5678', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'maria@ntendencia.com' },
-    { nome: 'Pedro bala', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'pedro@ntendencia.com' }
+    { nome: 'Capitu', unidade: 'Rio de Janeiro', ramal: '1234', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
+    { nome: 'Maria joaquina', unidade: 'Juiz de Fora', ramal: '5678', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
+    { nome: 'Pedro bala', unidade: 'Rio de Janeiro', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
+    { nome: 'Quincas Borba', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
+    { nome: 'Policarpo Quaresma', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
+    { nome: 'Tio Phil', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
+    { nome: 'Pirulito', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' }
   ];
 
   return (
@@ -28,7 +32,7 @@ const TableAdmin = () => {
             <td>{contato.telefones}</td>
             <td className='td-email'>{contato.email}</td>
             <td><FaPencilAlt className='td-icon td-pencil'/></td>
-            <td><FaTrashAlt className='td-icon td-trash'/></td>
+            <td><FaTrashAlt className='td-icon td-trash' onClick={() => setDeleteModalOpen(true)}/></td>
           </tr>
         ))}
       </tbody>

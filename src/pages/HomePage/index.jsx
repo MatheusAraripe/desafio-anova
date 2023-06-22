@@ -57,7 +57,10 @@ function HomePage() {
   return (
     <>
       {/*modal de deletar card*/}
-      {deleteModalOpen && <DeleteModal setOpenDeleteModal = {setDeleteModalOpen}/>}
+      {deleteModalOpen && <DeleteModal 
+      setOpenDeleteModal = {setDeleteModalOpen}
+      title = {"Excluir card?"}/>
+      }
 
       {/*modal de adicionar usuário*/}
       {modalOpen && <AddModal setOpenModal={setModalOpen} />}
