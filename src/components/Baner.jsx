@@ -1,19 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
-import {BiSearchAlt} from "react-icons/bi"
-import Select from './Select'
+import React from 'react'
+import InputWithSelect from './InputWithSelect'
 import "../styles/baner.scss"
 
 function Baner() {
 
-  const [selected, setSelected] = useState("Selecione...")
+  
   return (
     <div className='baner-container'>
-      <Select selected={selected} setSelected={setSelected}/>
-      <input type="text" name="" id="" className='nome-input' placeholder='Digite o nome do colaborador'/>
-      <div className="search-icon-container">
-        <BiSearchAlt className='search-icon'/>
-      </div>
+      <InputWithSelect />
     </div>
   )
 }
