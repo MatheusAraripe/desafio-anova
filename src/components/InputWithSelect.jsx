@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {BiSearchAlt} from "react-icons/bi"
 import Select from './Select'
+import '../styles/input_with_select.scss'
 
 function InputWithSelect() {
   
