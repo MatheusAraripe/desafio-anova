@@ -3,9 +3,9 @@ import {FaPencilAlt, FaTrashAlt} from "react-icons/fa"
 
 const TableAdmin = () => {
   const contatos = [
-    { nome: 'João', unidade: 'Rio de Janeiro', ramal: '1234', telefones: '(11) 1234-5678', email: 'joao@ntendencia.com' },
-    { nome: 'Maria', unidade: 'Juiz de Fora', ramal: '5678', telefones: '(22) 5678-9012', email: 'maria@ntendencia.com' },
-    { nome: 'Pedro', unidade: 'São Paulo', ramal: '9012', telefones: '(33) 9012-3456', email: 'pedro@ntendencia.com' }
+    { nome: 'João alberto', unidade: 'Rio de Janeiro', ramal: '1234', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'joao@ntendencia.com' },
+    { nome: 'Maria joaquina', unidade: 'Juiz de Fora', ramal: '5678', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'maria@ntendencia.com' },
+    { nome: 'Pedro bala', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'pedro@ntendencia.com' }
   ];
 
   return (
@@ -22,13 +22,13 @@ const TableAdmin = () => {
       <tbody>
         {contatos.map((contato, index) => (
           <tr key={index} >
-            <td>{contato.nome}</td>
+            <td className='td-name'>{contato.nome}</td>
             <td>{contato.unidade}</td>
-            <td>{contato.ramal}</td>
+            <td className='td-ramal'>{contato.ramal}</td>
             <td>{contato.telefones}</td>
-            <td>{contato.email}</td>
-            <td><FaPencilAlt /></td>
-            <td><FaTrashAlt /></td>
+            <td className='td-email'>{contato.email}</td>
+            <td><FaPencilAlt className='td-icon td-pencil'/></td>
+            <td><FaTrashAlt className='td-icon td-trash'/></td>
           </tr>
         ))}
       </tbody>

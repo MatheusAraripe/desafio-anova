@@ -1,3 +1,4 @@
+@import "../../styles/variables";
 .admin-title-container{
   display: flex;
   flex-direction: column;
@@ -30,9 +31,11 @@ thead{
 }
 
 th{
-  margin: 16px 0 16px 0;
+  
   padding-top: 16px;
-  margin: 20px;
+  padding-bottom: 16px;
+  text-align: center;
+  vertical-align: middle;
   color: #6D6D6D;
   font-size: 16px;
   font-family: "Quicksand";
@@ -52,7 +55,45 @@ th{
   padding-left: 240px;
   padding-right: 330px;
 }
+
 tr{
   border: 1px solid #E5E5E5;
   background: #FFF;
+}
+
+td{
+  padding: 16px 0 16px 0;
+  color: #6D6D6D;
+  font-size: 16px;
+  font-family: "Quicksand";
+  text-align: center;
+  vertical-align: middle;
+}
+
+// .td-name{
+//   padding: 0 52px 0 78px;
+// }
+
+.td-ramal{
+  padding-left: 57px;
+  padding-right: 127px;
+}
+
+// .td-email{
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-left: 42px;
+//   margin-right: 120px;
+//   padding: 0 0px 0 42px;
+//   background-color: antiquewhite;
+// }
+
+.td-icon{
+  color: $btn-hover-green;
+}
+
+.td-trash{
+  margin-right: 14px;
+  margin-left: 8.38px;
 }
