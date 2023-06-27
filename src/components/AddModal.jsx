@@ -19,6 +19,8 @@ const schema = yup.object({
 // eslint-disable-next-line react/prop-types
 function AddModal({setOpenModal}) {
 
+  const editUser = false
+
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   const handleSubmit = (data) => {
     console.log(data);
@@ -46,7 +48,14 @@ function AddModal({setOpenModal}) {
                   </div>
                   <div className="input-tel">
                     <input type="tel" placeholder='Telefone' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                    {editUser && <input type="tel" placeholder='Telefone' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>}
                   </div>
+                  {editUser &&
+                    <div className="input-tel">
+                      <input type="password" placeholder='XXXXXXXXXXXXXXXX' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                      <input type="password" placeholder='Confirmar Senha' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                    </div>
+                  }
                 </div>
             </div>
             <div className="footer">
