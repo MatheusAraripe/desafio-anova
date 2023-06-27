@@ -4,13 +4,11 @@
 .home-page-title{
     margin: 5rem 0 2rem 0;
 }
-
+.baner-section{
+    margin: 64px 128px 32px 128px;
+}
 .cards-section{
+    margin: 0 128px 0 128px;
+    background-color: aqua;
     display: flex;
-    justify-content: space-around;
-    height: 100%;
-    position: absolute;
-    left: 128px;
-    right: 128px;
-    top: 514px;
 }

@@ -22,6 +22,7 @@ function UserCard({name, unidade, ramal, tel, email, setDeleteModalOpen}) {
                 <p className="user-unidade">{unidade}</p>
                 <h4 className='user-ramal'>{ramal}</h4>
                 <p className='user-tel'>{tel}</p>
+
                 <p className='user-email'>{email}</p>
             </div>
         </div>

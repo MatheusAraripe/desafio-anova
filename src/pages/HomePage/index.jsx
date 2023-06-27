@@ -81,7 +81,9 @@ function HomePage() {
             <button className='social-button invite' onClick={()=>setInviteModalOpen(true)}>ENVIAR CONVITE</button>
           </div>
 
-          <Baner />
+          <div className="baner-section">
+            <Baner />
+          </div>
 
           {/* <h1 className='home-page-title'>
               Home page privada!

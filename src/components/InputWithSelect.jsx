@@ -8,7 +8,7 @@ function InputWithSelect() {
   const [selected, setSelected] = useState("Selecione...")
 
   return (
-    <>
+    <>  
         <Select selected={selected} setSelected={setSelected}/>
         <input type="text" name="" id="" className='nome-input' placeholder='Digite o nome do colaborador'/>
         <div className="search-icon-container">
