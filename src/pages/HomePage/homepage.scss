@@ -9,6 +9,8 @@
 }
 .cards-section{
     margin: 0 128px 0 128px;
-    background-color: aqua;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
