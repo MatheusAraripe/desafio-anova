@@ -59,6 +59,7 @@ function HomePage() {
   ]
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
@@ -76,7 +77,9 @@ function HomePage() {
       }
 
       {/*modal de adicionar usuário*/}
-      {modalOpen && <AddModal setOpenModal={setModalOpen} />}
+      {modalOpen && <AddModal setOpenModal={setModalOpen} editUser={false} />}
+
+      {editModalOpen && <AddModal setOpenModal={setEditModalOpen} editUser={true} />}
 
       {/*modal de convidar usuário*/}
       {inviteModalOpen && <NeedEmailModal 
@@ -112,6 +115,7 @@ function HomePage() {
                 tel={item.tel}
                 email={item.email}
                 setDeleteModalOpen = {setDeleteModalOpen}
+                setOpenModal={setEditModalOpen}
                 />
               )
             })}

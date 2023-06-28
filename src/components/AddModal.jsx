@@ -17,9 +17,8 @@ const schema = yup.object({
 })
 
 // eslint-disable-next-line react/prop-types
-function AddModal({setOpenModal}) {
+function AddModal({setOpenModal, editUser}) {
 
-  const editUser = false
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   const handleSubmit = (data) => {
@@ -28,7 +27,7 @@ function AddModal({setOpenModal}) {
 
   return (
     <div className='modal-background'>
-        <div className="modal-container">
+        <div className={editUser? "modal-container edit": "modal-container"}>
           <form onSubmit={onSubmit(handleSubmit)}>
             <div className="body">
                 <div className="add-pic">
@@ -48,12 +47,12 @@ function AddModal({setOpenModal}) {
                   </div>
                   <div className="input-tel">
                     <input type="tel" placeholder='Telefone' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
-                    {editUser && <input type="tel" placeholder='Telefone' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>}
+                    {editUser && <input type="tel" placeholder='Telefone' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>}
                   </div>
                   {editUser &&
                     <div className="input-tel">
                       <input type="password" placeholder='XXXXXXXXXXXXXXXX' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
-                      <input type="password" placeholder='Confirmar Senha' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                      <input type="password" placeholder='Confirmar Senha' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>
                     </div>
                   }
                 </div>
