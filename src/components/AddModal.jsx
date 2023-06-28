@@ -58,9 +58,9 @@ function AddModal({setOpenModal, editUser}) {
                 </div>
             </div>
             {editUser?
-              <div className="footer">
+              <div className="footer-edit">
                 <button className='modal-btn close' onClick={ ()=> setOpenModal(false)}>CANCELAR</button>
-                <button className='modal-btn save-user' >SALVAR</button>
+                <button className='modal-btn save-user-edit' >SALVAR</button>
             </div>
             :
             <div className="footer">
