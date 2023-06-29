@@ -108,6 +108,7 @@ function HomePage() {
           <button onClick={handleLogout}>Logout</button> */}
           <div className="cards-section">
             {users.map((item, index) => {
+              
               return(
                 <UserCard key={index} 
                 name={item.name}

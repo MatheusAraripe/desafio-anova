@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, {useState}from 'react'
 import "../styles/modal.scss"
 import {FaUserCircle} from "react-icons/fa"
 
@@ -18,6 +18,8 @@ const schema = yup.object({
 
 // eslint-disable-next-line react/prop-types
 function AddModal({setOpenModal, editUser}) {
+
+  const [newInput, setNewInput] = useState(false);
 
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
@@ -46,12 +48,17 @@ function AddModal({setOpenModal, editUser}) {
                       <option value="Juiz de Fora">Juiz de Fora</option>
                       <option value="São Paulo">São Paulo</option>
                     </select>
-                    {/* <input type="text" placeholder='Unidade' className="user-info unidade" name='unidade'/> */}
                     <input type="number" placeholder='Ramal' className={errors.ramal? "user-info ramal error-input": "user-info ramal"} name='ramal' {...register("ramal")}/>
                     <input type="email" placeholder='Email' name='email' className={errors.email? "user-info email error-input" :"user-info email"} {...register("email")}/>
                   </div>
                   <div className="input-tel">
                     <input type="tel" placeholder='Telefone' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                    
+                    {newInput?
+                    <input type="tel" placeholder='Telefone' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>:
+                    !editUser && <button onClick={ ()=> setNewInput(true)}>+</button>
+                    }
+                    
                     {editUser && <input type="tel" placeholder='Telefone' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>}
                   </div>
                   {editUser &&
