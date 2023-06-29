@@ -19,7 +19,7 @@ import * as yup from "yup";
 
 // Schema para validação
 const schema = yup.object({
-    email: yup.email().required("Campo obrigaório"),
+    email: yup.string().email().required("Campo obrigaório"),
     password: yup.string().required("Campo obrigaório")
 })
 

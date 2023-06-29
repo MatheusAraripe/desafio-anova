@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const schema = yup.object({
-    email: yup.email().required("Campo obrigaório").matches(/^(?!.*@[^,]*,)/)
+    email: yup.string().email().required("Campo obrigaório")
 })
 
 // eslint-disable-next-line react/prop-types
