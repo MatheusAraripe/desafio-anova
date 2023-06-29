@@ -69,7 +69,7 @@ const LoginForm = () => {
         </form>
         <Link className="link-login" onClick={() => setRecoverModalOpen(true)}>Esqueceu sua senha?</Link>
       </div>
-      <p>logado: {String(authenticated)}</p>
+      {/* <p>logado: {String(authenticated)}</p> */}
     </>
   );
 };

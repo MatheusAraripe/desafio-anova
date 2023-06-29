@@ -5,8 +5,14 @@ import './loginPage.scss';
 
 function LoginPage() {
   return (
-    <div>
-        <img src={logo} alt="" />
+    <div className='login-page-body'>
+        <div className="logo-container">
+          <div className="image-container">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="logo-line"></div>
+          <h3 className='logo-title'>Telefones Úteis</h3>
+        </div>
         <LoginForm />
     </div>
   )
