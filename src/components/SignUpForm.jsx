@@ -21,7 +21,7 @@ const getCharacterValidationError = (str) => {
 
 // Schema para validação
 const schema = yup.object({
-    email: yup.string().required("Campo obrigaório"),
+    email: yup.email().required("Campo obrigaório"),
     password: yup.string().required("Campo obrigaório")
     .min(8, "A senha deve ter ao menos 8 caracteres")
     .matches(/[0-9]/, getCharacterValidationError("digito"))

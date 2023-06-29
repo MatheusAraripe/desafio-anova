@@ -10,7 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const schema = yup.object({
-    email: yup.string().required("Campo obrigaório"),
+    email: yup.email().required("Campo obrigaório"),
     name: yup.string().required("Campo obrigaório").min(3, 'Nome muito curto'),
     ramal: yup.number().required("Campo obrigaório"),
     tel: yup.string().required("Campo obrigaório")
