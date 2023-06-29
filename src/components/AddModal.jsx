@@ -56,7 +56,7 @@ function AddModal({setOpenModal, editUser}) {
                     
                     {newInput?
                     <input type="tel" placeholder='Telefone' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>:
-                    !editUser && <button onClick={ ()=> setNewInput(true)}>+</button>
+                    !editUser && <button className="plus-btn" onClick={ ()=> setNewInput(true)}>+</button>
                     }
                     
                     {editUser && <input type="tel" placeholder='Telefone' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>}
