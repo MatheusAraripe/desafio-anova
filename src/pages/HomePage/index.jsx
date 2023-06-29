@@ -79,6 +79,7 @@ function HomePage() {
       {/*modal de adicionar usuário*/}
       {modalOpen && <AddModal setOpenModal={setModalOpen} editUser={false} />}
 
+      {/*modal de editar usuário*/}
       {editModalOpen && <AddModal setOpenModal={setEditModalOpen} editUser={true} />}
 
       {/*modal de convidar usuário*/}

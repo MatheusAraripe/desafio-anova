@@ -4,18 +4,29 @@ import NavBar from '../../components/NavBar'
 import InputWithSelect from '../../components/InputWithSelect'
 import TableAdmin from '../../components/TableAdmin'
 import DeleteModal from '../../components/DeleteModal'
+import AddModal from '../../components/AddModal'
 import "./adminpage.scss"
 
 function AdminPage() {
 
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
   return (
     <>
+
       {/*modal de deletar card*/}
       {deleteModalOpen && <DeleteModal 
       setOpenDeleteModal = {setDeleteModalOpen}
       title = {"Excluir usuário?"}/>
       }
+
+      {/*modal de editar user*/}
+      {editModalOpen && <AddModal 
+      setOpenModal={setEditModalOpen} 
+      editUser={true} />
+      }
+
+
       <div className='admin-page-container'>
           <NavBar />
           <div className="admin-title-container">
@@ -25,7 +36,7 @@ function AdminPage() {
             <InputWithSelect />
           </div>
           <div className="table-container">
-            <TableAdmin setDeleteModalOpen = {setDeleteModalOpen}/>
+            <TableAdmin setDeleteModalOpen = {setDeleteModalOpen} setOpenEditModal = {setEditModalOpen}/>
           </div>
       </div>
     </>

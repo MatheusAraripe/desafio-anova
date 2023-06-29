@@ -19,6 +19,10 @@ function DropDown() {
             title: 'Cadastrar',
             path: '/signup'
         },
+        {
+            title: 'Admin',
+            path: '/admin'
+        },
     ]
 
     const [click, setClick] = useState(false)
