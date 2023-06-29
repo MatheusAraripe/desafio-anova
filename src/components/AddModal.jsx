@@ -41,7 +41,12 @@ function AddModal({setOpenModal, editUser}) {
                     <input type="text" placeholder='Nome' className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
                   </div>
                   <div className="input-informations">
-                    <input type="text" placeholder='Unidade' className="user-info unidade" name='unidade'/>
+                    <select name="unidadade" id="" className="user-info unidade">
+                      <option value="rj">Rio de Janeiro</option>
+                      <option value="Juiz de Fora">Juiz de Fora</option>
+                      <option value="São Paulo">São Paulo</option>
+                    </select>
+                    {/* <input type="text" placeholder='Unidade' className="user-info unidade" name='unidade'/> */}
                     <input type="number" placeholder='Ramal' className={errors.ramal? "user-info ramal error-input": "user-info ramal"} name='ramal' {...register("ramal")}/>
                     <input type="email" placeholder='Email' name='email' className={errors.email? "user-info email error-input" :"user-info email"} {...register("email")}/>
                   </div>
