@@ -1,12 +1,13 @@
 import React from 'react'
 import SignUpForm from '../../components/SignUpForm';
+import Logo from '../../components/Logo';
 
 function SignUp() {
   return (
-    <>
-      <h1>Pagina de cadastro</h1>
+    <div className='login-page-body'>
+      <Logo />
       <SignUpForm />
-    </>
+    </div>
   )
 };
 
