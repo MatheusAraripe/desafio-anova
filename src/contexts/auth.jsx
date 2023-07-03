@@ -16,11 +16,20 @@ export const AuthProvider = ({children}) => {
         return [];
     };
 
+    const getContactsFromLs = () => {
+        const data = localStorage.getItem("contacts")
+        if (data){
+            return JSON.parse(data)
+        }
+        return [];
+    };
 
     // atribui se o usuário está logado ou não
     const [user, setUser] = useState(null);
 
     const [users, setUsers] = useState(getUsersFromLs);
+
+    const [contacts, setContacts] = useState(getContactsFromLs);
 
     // loading para esperar a aplicação recuperar user no local storage
     const [loading, setLoading] = useState(true);
@@ -91,8 +100,24 @@ export const AuthProvider = ({children}) => {
         navigate("/login");
     };
 
+
+    // guarda usuários no localStorage
+    const addUser = (name, email, uni, ramal, tel) =>{
+
+        const newContact = {
+            name,
+            email,
+            uni,
+            ramal,
+            tel
+        }
+
+        contacts.push(newContact)
+        localStorage.setItem('contacts',JSON.stringify(contacts));
+    }
+
     return(
-        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp}}>
+        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser}}>
             {children}
         </AuthContext.Provider>
     );

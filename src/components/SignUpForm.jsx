@@ -41,6 +41,8 @@ const SignUpForm = () => {
 
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
+
+  // guarda o user no localStorage
   const handleSubmit = (data) => {
     signUp(data.email, data.password)
   };

@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState}from 'react'
+import React, {useContext, useState}from 'react'
+import { AuthContext } from '../contexts/auth';
 import "../styles/modal.scss"
 import {FaUserCircle} from "react-icons/fa"
 
@@ -19,12 +20,17 @@ const schema = yup.object({
 // eslint-disable-next-line react/prop-types
 function AddModal({setOpenModal, editUser}) {
 
+  const {addUser} = useContext(AuthContext);
+
   const [newInput, setNewInput] = useState(false);
 
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
+
+
+  // guarda o user no localStorage
   const handleSubmit = (data) => {
-    console.log(data);
+    addUser(data.name, data.email, data.uni, data.ramal, data.tel)
   };
 
   return (
@@ -43,8 +49,8 @@ function AddModal({setOpenModal, editUser}) {
                     <input type="text" placeholder='Nome' className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
                   </div>
                   <div className="input-informations">
-                    <select name="unidadade" id="" className="user-info unidade">
-                      <option value="rj">Rio de Janeiro</option>
+                    <select name="uni" id="select" className="user-info unidade">
+                      <option value="Rio de Janeiro">Rio de Janeiro</option>
                       <option value="Juiz de Fora">Juiz de Fora</option>
                       <option value="São Paulo">São Paulo</option>
                     </select>
@@ -78,7 +84,7 @@ function AddModal({setOpenModal, editUser}) {
             <div className="footer">
               <button className='modal-btn close' onClick={ ()=> setOpenModal(false)}>CANCELAR</button>
               <button className='modal-btn add-user' >CONTINUAR ADD</button>
-              <button className='modal-btn save-user' >SALVAR E FINALIZAR</button>
+              <button className='modal-btn save-user' onClick={handleSubmit}>SALVAR E FINALIZAR</button>
             </div>
             }
           </form>
