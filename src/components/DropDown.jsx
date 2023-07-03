@@ -8,10 +8,6 @@ function DropDown() {
 
     const menuItens = [
         {
-            title: 'Home',
-            path: '/'
-        },
-        {
             title: 'Entrar',
             path: '/login'
         },

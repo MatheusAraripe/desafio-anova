@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
-import {IoMdArrowDropdown} from "react-icons/io";
+import {IoMdArrowDropdown, IoIosHome} from "react-icons/io";
 import{FaUserCircle} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import DropDown from './DropDown';
@@ -24,9 +24,9 @@ function NavBar() {
 
   return (
     <div className='nav-bar'>
-        <h3 className="nav-logo">
-            Telefones uteis
-        </h3>
+        <Link className='link-home-icon' to={'/'}>
+          <IoIosHome className='home-icon'/>
+        </Link>
         <Link onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='drop-link'>
           <FaUserCircle className='profile-icon'/>
           <IoMdArrowDropdown className='arrow-icon'/>
