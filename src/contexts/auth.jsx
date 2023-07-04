@@ -116,8 +116,16 @@ export const AuthProvider = ({children}) => {
         localStorage.setItem('contacts',JSON.stringify(contacts));
     }
 
+
+    const excludeUser = (index) => {
+        const contactArry = getContactsFromLs();
+        contactArry.splice(index, 1);
+
+        localStorage.setItem('contacts', JSON.stringify(contactArry));
+    }
+
     return(
-        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs}}>
+        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser}}>
             {children}
         </AuthContext.Provider>
     );

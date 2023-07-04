@@ -69,7 +69,9 @@ function HomePage() {
             {contacts.map((item, index) => {
               
               return(
-                <UserCard key={index} 
+                <UserCard 
+                key={index}
+                index={index} 
                 name={item.name}
                 unidade={item.uni}
                 ramal={item.ramal}
