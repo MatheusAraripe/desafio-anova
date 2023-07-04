@@ -1,5 +1,6 @@
 import {createContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 export const AuthContext = createContext();
 
@@ -105,6 +106,7 @@ export const AuthProvider = ({children}) => {
     const addUser = (name, email, uni, ramal, tel) =>{
 
         const newContact = {
+            id: uuidv4(),
             name,
             email,
             uni,
@@ -119,7 +121,6 @@ export const AuthProvider = ({children}) => {
 
     const excludeUser = (index) => {
         const contactArry = getContactsFromLs();
-        console.log(contactArry);
         contactArry.splice(index, 1);
 
         setContacts(contactArry)
