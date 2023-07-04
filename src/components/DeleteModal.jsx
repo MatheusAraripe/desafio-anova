@@ -3,12 +3,12 @@ import "../styles/delete_modal.scss"
 import {MdDeleteForever} from "react-icons/md"
 import { AuthContext } from '../contexts/auth'
 
-function DeleteModal({setOpenDeleteModal, title, index}) {
+function DeleteModal({setOpenDeleteModal, title, setIdToDelete}) {
 
   const {excludeUser} = useContext(AuthContext);
 
-  const excludeTheCard = (index) =>{
-    excludeUser(index);
+  const excludeTheCard = (id) =>{
+    excludeUser(id);
     setOpenDeleteModal(false);
   }
 
@@ -25,7 +25,7 @@ function DeleteModal({setOpenDeleteModal, title, index}) {
           </div>
           <div className="footer-invite">
             <button className='cancel-op-btn' onClick={ ()=> setOpenDeleteModal(false)}>CANCELAR</button>
-            <button className='excluir-btn' onClick={ ()=> excludeTheCard(index)}>EXCLUIR</button>
+            <button className='excluir-btn' onClick={ ()=> excludeTheCard(setIdToDelete)}>EXCLUIR</button>
           </div>
         </div>
       </div>

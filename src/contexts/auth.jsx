@@ -119,12 +119,13 @@ export const AuthProvider = ({children}) => {
     }
 
 
-    const excludeUser = (index) => {
+    const excludeUser = (id) => {
         const contactArry = getContactsFromLs();
-        contactArry.splice(index, 1);
+        const updatedList = contactArry.filter(item => item.id !== id);
+        // console.log(contactArry, updatedList, id);
 
-        setContacts(contactArry)
-        localStorage.setItem('contacts', JSON.stringify(contactArry));
+        setContacts(updatedList)
+        localStorage.setItem('contacts', JSON.stringify(updatedList));
     }
 
     return(

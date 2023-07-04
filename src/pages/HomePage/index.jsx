@@ -20,7 +20,10 @@ function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
+
+
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [idToDelete, setIdToDelete] = useState("");
 
   // const {logout} = useContext(AuthContext);
   // const handleLogout = () => {
@@ -32,7 +35,9 @@ function HomePage() {
       {/*modal de deletar card*/}
       {deleteModalOpen && <DeleteModal 
       setOpenDeleteModal = {setDeleteModalOpen}
-      title = {"Excluir card?"}/>
+      setIdToDelete = {idToDelete}
+      title = {"Excluir card?"}
+      />
       }
 
       {/*modal de adicionar usuário*/}
@@ -67,11 +72,11 @@ function HomePage() {
           <button onClick={handleLogout}>Logout</button> */}
           <div className="cards-section">
             {contacts.map((item, index) => {
-              
+        
               return(
                 <UserCard 
                 key={index}
-                index={index} 
+                id={item.id} 
                 name={item.name}
                 unidade={item.uni}
                 ramal={item.ramal}
@@ -79,6 +84,7 @@ function HomePage() {
                 email={item.email}
                 setDeleteModalOpen = {setDeleteModalOpen}
                 setOpenModal={setEditModalOpen}
+                setIdToDelete = {setIdToDelete}
                 />
               )
             })}
