@@ -31,8 +31,8 @@ function AddModal({setOpenModal, editUser}) {
 
   // guarda o user no localStorage
   const handleSubmit = (data) => {
-    console.log(data.uni)
-    addUser(data.name, data.email, data.uni, data.ramal, data.tel)
+    addUser(data.name, data.email, data.uni, data.ramal, data.tel);
+    setOpenModal(false);
   };
 
   return (
@@ -85,7 +85,7 @@ function AddModal({setOpenModal, editUser}) {
             :
             <div className="footer">
               <button className='modal-btn close' onClick={ ()=> setOpenModal(false)}>CANCELAR</button>
-              <button className='modal-btn add-user' >CONTINUAR ADD</button>
+              <button className='modal-btn add-user'>CONTINUAR ADD</button>
               <button className='modal-btn save-user' onClick={handleSubmit}>SALVAR E FINALIZAR</button>
             </div>
             }
