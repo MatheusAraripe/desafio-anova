@@ -20,11 +20,11 @@ const schema = yup.object({
 // eslint-disable-next-line react/prop-types
 function AddModal({setOpenModal, editUser}) {
 
-  const {addUser} = useContext(AuthContext);
-
   const [newInput, setNewInput] = useState(false);
 
 
+  const {addUser} = useContext(AuthContext);
+  
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
 
 

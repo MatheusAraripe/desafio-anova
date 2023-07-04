@@ -12,51 +12,57 @@ import UserCard from '../../components/UserCard';
 
 function HomePage() {
 
-  const users = [
-    {
-      name: "Matheus Araripe",
-      unidade: "Unidade Juiz de Fora",
-      ramal: "Ramal 282",
-      tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-      email: "raphaelli.bellini@ntendencia.com.br"
-    },
-    {
-      name: "Matheus Araripe",
-      unidade: "Unidade Juiz de Fora",
-      ramal: "Ramal 282",
-      tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-      email: "raphaelli.bellini@ntendencia.com.br"
-    },
-    {
-      name: "Matheus Araripe",
-      unidade: "Unidade Juiz de Fora",
-      ramal: "Ramal 282",
-      tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-      email: "raphaelli.bellini@ntendencia.com.br"
-    },
-    {
-      name: "Matheus Araripe",
-      unidade: "Unidade Juiz de Fora",
-      ramal: "Ramal 282",
-      tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-      email: "raphaelli.bellini@ntendencia.com.br"
-    },
-    {
-      name: "Matheus Araripe",
-      unidade: "Unidade Juiz de Fora",
-      ramal: "Ramal 282",
-      tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-      email: "raphaelli.bellini@ntendencia.com.br"
-    },
-    {
-      name: "Matheus Araripe",
-      unidade: "Unidade Juiz de Fora",
-      ramal: "Ramal 282",
-      tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-      email: "raphaelli.bellini@ntendencia.com.br"
-    },
+  const {getContactsFromLs} = useContext(AuthContext);
+  const contacts = getContactsFromLs();
+  console.log(contacts);
 
-  ]
+  // const users = [
+  //   {
+  //     name: "Matheus Araripe",
+  //     unidade: "Unidade Juiz de Fora",
+  //     ramal: "Ramal 282",
+  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
+  //     email: "raphaelli.bellini@ntendencia.com.br"
+  //   },
+  //   {
+  //     name: "Matheus Araripe",
+  //     unidade: "Unidade Juiz de Fora",
+  //     ramal: "Ramal 282",
+  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
+  //     email: "raphaelli.bellini@ntendencia.com.br"
+  //   },
+  //   {
+  //     name: "Matheus Araripe",
+  //     unidade: "Unidade Juiz de Fora",
+  //     ramal: "Ramal 282",
+  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
+  //     email: "raphaelli.bellini@ntendencia.com.br"
+  //   },
+  //   {
+  //     name: "Matheus Araripe",
+  //     unidade: "Unidade Juiz de Fora",
+  //     ramal: "Ramal 282",
+  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
+  //     email: "raphaelli.bellini@ntendencia.com.br"
+  //   },
+  //   {
+  //     name: "Matheus Araripe",
+  //     unidade: "Unidade Juiz de Fora",
+  //     ramal: "Ramal 282",
+  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
+  //     email: "raphaelli.bellini@ntendencia.com.br"
+  //   },
+  //   {
+  //     name: "Matheus Araripe",
+  //     unidade: "Unidade Juiz de Fora",
+  //     ramal: "Ramal 282",
+  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
+  //     email: "raphaelli.bellini@ntendencia.com.br"
+  //   },
+
+  // ]
+
+  // hooks para abrir os modais
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -107,7 +113,7 @@ function HomePage() {
           </h1>
           <button onClick={handleLogout}>Logout</button> */}
           <div className="cards-section">
-            {users.map((item, index) => {
+            {contacts.map((item, index) => {
               
               return(
                 <UserCard key={index} 
