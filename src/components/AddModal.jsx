@@ -14,7 +14,8 @@ const schema = yup.object({
     email: yup.string().email().required("Campo obrigaório"),
     name: yup.string().required("Campo obrigaório").min(3, 'Nome muito curto'),
     ramal: yup.number().required("Campo obrigaório"),
-    tel: yup.string().required("Campo obrigaório")
+    tel: yup.string().required("Campo obrigaório"),
+    uni: yup.string().required("Campo obrigaório")
 })
 
 // eslint-disable-next-line react/prop-types
@@ -24,12 +25,13 @@ function AddModal({setOpenModal, editUser}) {
 
 
   const {addUser} = useContext(AuthContext);
-  
+
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
 
 
   // guarda o user no localStorage
   const handleSubmit = (data) => {
+    console.log(data.uni)
     addUser(data.name, data.email, data.uni, data.ramal, data.tel)
   };
 
@@ -49,7 +51,7 @@ function AddModal({setOpenModal, editUser}) {
                     <input type="text" placeholder='Nome' className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
                   </div>
                   <div className="input-informations">
-                    <select name="uni" id="select" className="user-info unidade">
+                    <select name="uni" id="select" className="user-info unidade" {...register("uni")}>
                       <option value="Rio de Janeiro">Rio de Janeiro</option>
                       <option value="Juiz de Fora">Juiz de Fora</option>
                       <option value="São Paulo">São Paulo</option>

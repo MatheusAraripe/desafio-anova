@@ -14,53 +14,6 @@ function HomePage() {
 
   const {getContactsFromLs} = useContext(AuthContext);
   const contacts = getContactsFromLs();
-  console.log(contacts);
-
-  // const users = [
-  //   {
-  //     name: "Matheus Araripe",
-  //     unidade: "Unidade Juiz de Fora",
-  //     ramal: "Ramal 282",
-  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-  //     email: "raphaelli.bellini@ntendencia.com.br"
-  //   },
-  //   {
-  //     name: "Matheus Araripe",
-  //     unidade: "Unidade Juiz de Fora",
-  //     ramal: "Ramal 282",
-  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-  //     email: "raphaelli.bellini@ntendencia.com.br"
-  //   },
-  //   {
-  //     name: "Matheus Araripe",
-  //     unidade: "Unidade Juiz de Fora",
-  //     ramal: "Ramal 282",
-  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-  //     email: "raphaelli.bellini@ntendencia.com.br"
-  //   },
-  //   {
-  //     name: "Matheus Araripe",
-  //     unidade: "Unidade Juiz de Fora",
-  //     ramal: "Ramal 282",
-  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-  //     email: "raphaelli.bellini@ntendencia.com.br"
-  //   },
-  //   {
-  //     name: "Matheus Araripe",
-  //     unidade: "Unidade Juiz de Fora",
-  //     ramal: "Ramal 282",
-  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-  //     email: "raphaelli.bellini@ntendencia.com.br"
-  //   },
-  //   {
-  //     name: "Matheus Araripe",
-  //     unidade: "Unidade Juiz de Fora",
-  //     ramal: "Ramal 282",
-  //     tel: "(32) XXXXX-XXXX / (32) XXXXX-XXXX",
-  //     email: "raphaelli.bellini@ntendencia.com.br"
-  //   },
-
-  // ]
 
   // hooks para abrir os modais
 
@@ -118,7 +71,7 @@ function HomePage() {
               return(
                 <UserCard key={index} 
                 name={item.name}
-                unidade={item.unidade}
+                unidade={item.uni}
                 ramal={item.ramal}
                 tel={item.tel}
                 email={item.email}
