@@ -35,6 +35,7 @@ function AddModal({setOpenModal, editUser}) {
     setOpenModal(false);
   };
 
+  // guarda o user no localStorage e volta para adicionar um novo
   const handleSubmit2 = (data) => {
     addUser(data.name, data.email, data.uni, data.ramal, data.tel, data.tel2);
     setOpenModal(false);

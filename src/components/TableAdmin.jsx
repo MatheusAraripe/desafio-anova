@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {useContext}from 'react';
+import { AuthContext } from '../contexts/auth';
 import {FaPencilAlt, FaTrashAlt} from "react-icons/fa"
 
-const TableAdmin = ({setDeleteModalOpen, setOpenEditModal}) => {
-  const contatos = [
-    { nome: 'Capitu', unidade: 'Rio de Janeiro', ramal: '1234', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
-    { nome: 'Maria joaquina', unidade: 'Juiz de Fora', ramal: '5678', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
-    { nome: 'Pedro bala', unidade: 'Rio de Janeiro', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
-    { nome: 'Quincas Borba', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
-    { nome: 'Policarpo Quaresma', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
-    { nome: 'Tio Phil', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' },
-    { nome: 'Pirulito', unidade: 'São Paulo', ramal: '9012', telefones: '(32) 98856-0098 / (32) 98877-0987 ', email: 'email@ntendencia.com' }
-  ];
+const TableAdmin = ({setDeleteModalOpen, setOpenEditModal, setIdToDelete}) => {
+
+  // busca todos os contatos no LocalStorage
+  const {getContactsFromLs} = useContext(AuthContext);
+  const contacts = getContactsFromLs();
+
+
+  const handleClick = (id) => {
+    setDeleteModalOpen(true);
+    setIdToDelete(id)
+  }
 
   return (
     <table >
@@ -24,15 +26,18 @@ const TableAdmin = ({setDeleteModalOpen, setOpenEditModal}) => {
         </tr>
       </thead>
       <tbody>
-        {contatos.map((contato, index) => (
+        {contacts.map((contact, index) => (
           <tr key={index} >
-            <td className='td-name'>{contato.nome}</td>
-            <td>{contato.unidade}</td>
-            <td className='td-ramal'>{contato.ramal}</td>
-            <td>{contato.telefones}</td>
-            <td className='td-email'>{contato.email}</td>
+            <td className='td-name'>{contact.name}</td>
+            <td>{contact.uni}</td>
+            <td className='td-ramal'>{contact.ramal}</td>
+            {contact.tel2?
+            <td>{contact.tel} / {contact.tel2}</td>:
+            <td>{contact.tel}</td>
+            }
+            <td className='td-email'>{contact.email}</td>
             <td><FaPencilAlt className='td-icon td-pencil' onClick={() => setOpenEditModal(true)}/></td>
-            <td><FaTrashAlt className='td-icon td-trash' onClick={() => setDeleteModalOpen(true)}/></td>
+            <td><FaTrashAlt className='td-icon td-trash' onClick={() => handleClick(contact.id)}/></td>
           </tr>
         ))}
       </tbody>

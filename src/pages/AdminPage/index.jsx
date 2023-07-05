@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
+import { AuthContext } from '../../contexts/auth';
 import NavBar from '../../components/NavBar'
 import InputWithSelect from '../../components/InputWithSelect'
 import TableAdmin from '../../components/TableAdmin'
@@ -9,14 +10,20 @@ import "./adminpage.scss"
 
 function AdminPage() {
 
+  // hooks para abrir os modais
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
+
+  // hook para pegar a id do usuário para deletar
+  const [idToDelete, setIdToDelete] = useState("");
+
   return (
     <>
 
       {/*modal de deletar card*/}
       {deleteModalOpen && <DeleteModal 
       setOpenDeleteModal = {setDeleteModalOpen}
+      setIdToDelete = {idToDelete}
       title = {"Excluir usuário?"}/>
       }
 
@@ -36,7 +43,11 @@ function AdminPage() {
             <InputWithSelect />
           </div>
           <div className="table-container">
-            <TableAdmin setDeleteModalOpen = {setDeleteModalOpen} setOpenEditModal = {setEditModalOpen}/>
+            <TableAdmin 
+            setDeleteModalOpen = {setDeleteModalOpen} 
+            setOpenEditModal = {setEditModalOpen}
+            setIdToDelete = {setIdToDelete}
+            />
           </div>
       </div>
     </>
