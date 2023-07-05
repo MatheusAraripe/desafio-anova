@@ -81,6 +81,7 @@ function HomePage() {
                 unidade={item.uni}
                 ramal={item.ramal}
                 tel={item.tel}
+                tel2={item.tel2}
                 email={item.email}
                 setDeleteModalOpen = {setDeleteModalOpen}
                 setOpenModal={setEditModalOpen}

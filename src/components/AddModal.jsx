@@ -31,7 +31,7 @@ function AddModal({setOpenModal, editUser}) {
 
   // guarda o user no localStorage
   const handleSubmit = (data) => {
-    addUser(data.name, data.email, data.uni, data.ramal, data.tel);
+    addUser(data.name, data.email, data.uni, data.ramal, data.tel, data.tel2);
     setOpenModal(false);
   };
 
@@ -60,7 +60,7 @@ function AddModal({setOpenModal, editUser}) {
                     <input type="tel" placeholder={errors.tel? errors.tel.message: 'Telefone'} className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
                     
                     {newInput?
-                    <input type="tel" placeholder={errors.tel? errors.tel.message: 'Telefone'} className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>:
+                    <input type="tel" placeholder={errors.tel? errors.tel.message: 'Telefone'} className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel2")}/>:
                     !editUser && <button className="plus-btn" onClick={ ()=> setNewInput(true)}>+</button>
                     }
                     

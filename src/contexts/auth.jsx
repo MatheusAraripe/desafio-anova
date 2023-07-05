@@ -103,7 +103,7 @@ export const AuthProvider = ({children}) => {
 
 
     // guarda usuários no localStorage
-    const addUser = (name, email, uni, ramal, tel) =>{
+    const addUser = (name, email, uni, ramal, tel, tel2) =>{
 
         const newContact = {
             id: uuidv4(),
@@ -111,7 +111,8 @@ export const AuthProvider = ({children}) => {
             email,
             uni,
             ramal,
-            tel
+            tel,
+            tel2
         }
 
         contacts.push(newContact)

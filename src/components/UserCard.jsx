@@ -2,7 +2,7 @@ import React from 'react'
 import {FaPencilAlt, FaTrashAlt, FaUserCircle} from "react-icons/fa"
 import "../styles/user_card.scss"
 
-function UserCard({id, name, unidade, ramal, tel, email, setDeleteModalOpen, setOpenModal, setIdToDelete}) {
+function UserCard({id, name, unidade, ramal, tel, tel2, email, setDeleteModalOpen, setOpenModal, setIdToDelete}) {
 
   const handleClick = () => {
     setDeleteModalOpen(true);
@@ -28,8 +28,10 @@ function UserCard({id, name, unidade, ramal, tel, email, setDeleteModalOpen, set
             <div className="card-content">
                 <p className="user-unidade">Unidade {unidade}</p>
                 <h4 className='user-ramal'>Ramal {ramal}</h4>
+                {tel2?
+                <p className='user-tel'>{tel} / {tel2}</p>:
                 <p className='user-tel'>{tel}</p>
-
+                }
                 <p className='user-email'>{email}</p>
             </div>
         </div>
