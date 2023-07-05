@@ -35,10 +35,16 @@ function AddModal({setOpenModal, editUser}) {
     setOpenModal(false);
   };
 
+  const handleSubmit2 = (data) => {
+    addUser(data.name, data.email, data.uni, data.ramal, data.tel, data.tel2);
+    setOpenModal(false);
+    setOpenModal(true);
+  };
+
   return (
     <div className='modal-background'>
         <div className={editUser? "modal-container edit": "modal-container"}>
-          <form onSubmit={onSubmit(handleSubmit)}>
+          <form>
             <div className="body">
                 <div className="add-pic">
                   <FaUserCircle className='add-user-icon'/>
@@ -82,8 +88,8 @@ function AddModal({setOpenModal, editUser}) {
             :
             <div className="footer">
               <button className='modal-btn close' onClick={ ()=> setOpenModal(false)}>CANCELAR</button>
-              <button className='modal-btn add-user'>CONTINUAR ADD</button>
-              <button className='modal-btn save-user' onClick={handleSubmit}>SALVAR E FINALIZAR</button>
+              <button className='modal-btn add-user' onClick={onSubmit(handleSubmit2)}>CONTINUAR ADD</button>
+              <button className='modal-btn save-user' onClick={onSubmit(handleSubmit)}>SALVAR E FINALIZAR</button>
             </div>
             }
           </form>
