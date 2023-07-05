@@ -21,7 +21,7 @@ function HomePage() {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
 
-
+  // necessários para o modal de deletar usuário
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [idToDelete, setIdToDelete] = useState("");
 

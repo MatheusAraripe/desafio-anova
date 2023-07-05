@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const schema = yup.object({
-    email: yup.string().email().required("Campo obrigaório")
+    email: yup.string().email("Insira um email válido").required("Campo obrigaório")
 })
 
 // eslint-disable-next-line react/prop-types
@@ -33,11 +33,8 @@ function NeedEmailModal({setOpenInviteModal, title, text, btnText, icon}) {
                         <p className='invite-modal-text'>{text}</p>
                     </div>
                     <div className="invite-email-container">
-                        <input type="email" name='email' placeholder='Email' className={errors.email? "invite-email error-input" :"invite-email"} {...register("email")}/>
+                        <input type="email" name='email' placeholder={errors.email? errors.email.message: "Email"} className={errors.email? "invite-email error-input" :"invite-email"} {...register("email")}/>
                     </div>
-                    <span className="error invite-erro">
-                        {errors.email?.message}
-                    </span>
                 </div>
                 <div className="footer-invite">
                     <button className='invite-user-btn'>{btnText}</button>

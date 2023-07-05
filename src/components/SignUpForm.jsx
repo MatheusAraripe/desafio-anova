@@ -21,7 +21,7 @@ const getCharacterValidationError = (str) => {
 
 // Schema para validação
 const schema = yup.object({
-    email: yup.string().email().required("Campo obrigaório"),
+    email: yup.string().email("Insira um email válido").required("Campo obrigaório"),
     password: yup.string().required("Campo obrigaório")
     .min(8, "A senha deve ter ao menos 8 caracteres")
     .matches(/[0-9]/, getCharacterValidationError("digito"))
@@ -53,27 +53,27 @@ const SignUpForm = () => {
         <form onSubmit={onSubmit(handleSubmit)}>
 
             <Input
+            clas={errors.email? 'login-input login-erro': 'login-input'}
             type="email"
             name="email"
-            placeholder="usuario@ntendencia.com.br"
+            placeholder={errors.email? errors.email.message: "usuario@ntendencia.com.br"}
             register={register}
-            error={errors.email?.message}
             />
 
             <Input
+            clas={errors.password? 'login-input login-erro': 'login-input'}
             type="password"
             name="password"
-            placeholder="Senha"
+            placeholder={errors.password? errors.password.message: "Senha"}
             register={register}
-            error={errors.password?.message}
             />
 
             <Input
+            clas={errors.confirmPassword? 'login-input login-erro': 'login-input'}
             type="password"
             name="confirmPassword"
-            placeholder="Confirmar senha"
+            placeholder={errors.confirmPassword? errors.confirmPassword.message: "Confirmar senha"}
             register={register}
-            error = {errors.confirmPassword?.message}
             />
 
             <Button button = "CADASTRAR" />

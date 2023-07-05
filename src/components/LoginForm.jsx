@@ -50,19 +50,19 @@ const LoginForm = () => {
         <form onSubmit={onSubmit(handleSubmit)}>
           
           <Input
+            clas={errors.email? 'login-input login-erro': 'login-input'}
             type = "email"
             name="email"
-            placeholder="usuario@ntendencia.com.br"
+            placeholder={errors.email? errors.email.message: "usuario@ntendencia.com.br"}
             register={register}
-            error={errors.email?.message}
           />
 
           <Input
+            clas={errors.email? 'login-input login-erro': 'login-input'}
             type="password"
             name="password"
-            placeholder="Senha"
+            placeholder={errors.password? errors.password.message: "Senha"}
             register = {register}
-            error={errors.password?.message}
           />
 
           <Button button = "ENTRAR" />

@@ -21,6 +21,11 @@
     opacity: 0.5; /* Firefox */
 }
 
+.login-erro::placeholder{
+    opacity: 1;
+    color: #a80909;
+}
+
 
 .error{
     color: $error-validation;
@@ -95,4 +100,8 @@
 
 .error-input{
   border: 2px solid #ff2b2b;
+}
+
+.error-input::placeholder{
+    color: #ff2b2b;
 }
