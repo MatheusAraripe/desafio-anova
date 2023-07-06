@@ -2,7 +2,12 @@ import React from 'react'
 import {FaPencilAlt, FaTrashAlt, FaUserCircle} from "react-icons/fa"
 import "../styles/user_card.scss"
 
-function UserCard({id, name, unidade, ramal, tel, tel2, email, setDeleteModalOpen, setOpenModal, setIdToDelete}) {
+function UserCard({id, name, unidade, ramal, tel, tel2, email, setDeleteModalOpen, setOpenModal, setIdToDelete, setContactName}) {
+
+  const handleClickToEdit = () =>{
+    setOpenModal(true);
+    setContactName(name);
+  }
 
   const handleClick = () => {
     setDeleteModalOpen(true);
@@ -20,7 +25,7 @@ function UserCard({id, name, unidade, ramal, tel, tel2, email, setDeleteModalOpe
                     {name}
                 </h2>
                 <div className="interactive-icons">
-                    <FaPencilAlt className='interactive-icon' onClick={() => setOpenModal(true)}/>
+                    <FaPencilAlt className='interactive-icon' onClick={() => handleClickToEdit()}/>
                     <FaTrashAlt className='interactive-icon' onClick={() => handleClick()}/>
                     
                 </div>

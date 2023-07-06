@@ -18,12 +18,16 @@ function HomePage() {
   // hooks para abrir os modais
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [editModalOpen, setEditModalOpen] = useState(false);
   const [inviteModalOpen, setInviteModalOpen] = useState(false);
 
   // necessários para o modal de deletar usuário
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [idToDelete, setIdToDelete] = useState("");
+
+
+  // hooks para o modal de editar
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [contactName, setContactName] = useState("");
 
   // const {logout} = useContext(AuthContext);
   // const handleLogout = () => {
@@ -44,7 +48,12 @@ function HomePage() {
       {modalOpen && <AddModal setOpenModal={setModalOpen} editUser={false} />}
 
       {/*modal de editar usuário*/}
-      {editModalOpen && <AddModal setOpenModal={setEditModalOpen} editUser={true} />}
+      {editModalOpen && 
+      <AddModal 
+      setOpenModal={setEditModalOpen} 
+      editUser={true} 
+      nameToEdit={contactName}/>
+      }
 
       {/*modal de convidar usuário*/}
       {inviteModalOpen && <NeedEmailModal 
@@ -71,7 +80,7 @@ function HomePage() {
           </h1>
           <button onClick={handleLogout}>Logout</button> */}
           <div className="cards-section">
-            
+
             {contacts.map((item, index) => {
         
               return(
@@ -87,6 +96,7 @@ function HomePage() {
                 setDeleteModalOpen = {setDeleteModalOpen}
                 setOpenModal={setEditModalOpen}
                 setIdToDelete = {setIdToDelete}
+                setContactName = {setContactName}
                 />
               )
             })}

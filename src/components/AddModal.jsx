@@ -19,7 +19,7 @@ const schema = yup.object({
 })
 
 // eslint-disable-next-line react/prop-types
-function AddModal({setOpenModal, editUser}) {
+function AddModal({setOpenModal, editUser, nameToEdit}) {
 
   const [newInput, setNewInput] = useState(false);
 
@@ -52,7 +52,14 @@ function AddModal({setOpenModal, editUser}) {
                 </div>
                 <div className="inputs-container">
                   <div className="input-name">
-                    <input type="text" placeholder={errors.name? errors.name.message: 'Nome'} className={errors.name? "user-info name error-input" : "user-info name"} name='name' {...register("name")}/>
+                    <input
+                    value={editUser? nameToEdit: null}
+                    type="text" 
+                    placeholder={errors.name? errors.name.message: 'Nome'}
+                    className={errors.name? "user-info name error-input" : "user-info name"} 
+                    name='name' 
+                    {...register("name")}
+                    />
                   </div>
                   <div className="input-informations">
                     <select name="uni" id="select" className="user-info unidade" {...register("uni")}>
@@ -60,23 +67,68 @@ function AddModal({setOpenModal, editUser}) {
                       <option value="Juiz de Fora">Juiz de Fora</option>
                       <option value="São Paulo">São Paulo</option>
                     </select>
-                    <input type="number" placeholder={errors.ramal? errors.ramal.message: 'Ramal'} className={errors.ramal? "user-info ramal error-input": "user-info ramal"} name='ramal' {...register("ramal")}/>
-                    <input type="email" placeholder={errors.email? errors.email.message: "Email"} name='email' className={errors.email? "user-info email error-input" :"user-info email"} {...register("email")}/>
+                    <input 
+                    type="number"
+                    placeholder={errors.ramal? errors.ramal.message: 'Ramal'} 
+                    className={errors.ramal? "user-info ramal error-input": "user-info ramal"} 
+                    name='ramal' 
+                    {...register("ramal")}
+                    />
+                    <input 
+                    type="email" 
+                    placeholder={errors.email? errors.email.message: "Email"} 
+                    name='email' 
+                    className={errors.email? "user-info email error-input" :"user-info email"} 
+                    {...register("email")}
+                    />
                   </div>
                   <div className="input-tel">
-                    <input type="tel" placeholder={errors.tel? errors.tel.message: 'Telefone'} className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
+                    <input 
+                    type="tel" 
+                    placeholder={errors.tel? errors.tel.message: 'Telefone'} 
+                    className={errors.tel? "user-info tel error-input":'user-info tel'} 
+                    name='tel' 
+                    {...register("tel")}
+                    />
                     
-                    {newInput?
-                    <input type="tel" placeholder={errors.tel? errors.tel.message: 'Telefone'} className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel2")}/>:
+                    {
+                    newInput?
+                    <input 
+                    type="tel" 
+                    placeholder={errors.tel? errors.tel.message: 'Telefone'} 
+                    className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
+                    name='tel' 
+                    {...register("tel2")}/>
+                    :
                     !editUser && <button className="plus-btn" onClick={ ()=> setNewInput(true)}>+</button>
                     }
                     
-                    {editUser && <input type="tel" placeholder={errors.tel? errors.tel.message: 'Telefone'} className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>}
+                    {
+                    editUser && 
+                    <input 
+                    type="tel" 
+                    placeholder={errors.tel? errors.tel.message: 'Telefone'} 
+                    className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
+                    name='tel' 
+                    {...register("tel")}/>
+                    }
+
                   </div>
-                  {editUser &&
+                  {
+                  editUser &&
                     <div className="input-tel">
-                      <input type="password" placeholder='XXXXXXXXXXXXXXXX' className={errors.tel? "user-info tel error-input":'user-info tel'} name='tel' {...register("tel")}/>
-                      <input type="password" placeholder='Confirmar Senha' className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} name='tel' {...register("tel")}/>
+                      <input 
+                      type="password" 
+                      placeholder='XXXXXXXXXXXXXXXX' 
+                      className={errors.tel? "user-info tel error-input":'user-info tel'} 
+                      name='tel' 
+                      {...register("tel")}/>
+                      <input 
+                      type="password" 
+                      placeholder='Confirmar Senha' 
+                      className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
+                      name='tel' 
+                      {...register("tel")}/>
                     </div>
                   }
                 </div>

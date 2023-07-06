@@ -7,10 +7,16 @@ function InputWithSelect() {
   
   const [selected, setSelected] = useState("Selecione...")
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <>  
         <Select selected={selected} setSelected={setSelected}/>
-        <input type="text" name="" id="" className='nome-input' placeholder='Digite o nome do colaborador'/>
+        <input type="text" value = {searchTerm} onChange={handleInputChange} className='nome-input' placeholder='Digite o nome do colaborador'/>
         <div className="search-icon-container">
         <BiSearchAlt className='search-icon'/>
         </div>
