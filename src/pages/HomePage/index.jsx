@@ -71,6 +71,7 @@ function HomePage() {
           </h1>
           <button onClick={handleLogout}>Logout</button> */}
           <div className="cards-section">
+            
             {contacts.map((item, index) => {
         
               return(

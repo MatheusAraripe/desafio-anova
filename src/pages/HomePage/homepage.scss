@@ -9,8 +9,7 @@
 }
 .cards-section{
     margin: 0 128px 0 128px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 26px;
 }
