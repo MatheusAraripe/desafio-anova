@@ -18,8 +18,9 @@ const schema = yup.object({
     uni: yup.string().required("Campo obrigaório")
 })
 
+
 // eslint-disable-next-line react/prop-types
-function AddModal({setOpenModal, editUser, nameToEdit}) {
+function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit, telToEdit}) {
 
   const [newInput, setNewInput] = useState(false);
 
@@ -69,13 +70,15 @@ function AddModal({setOpenModal, editUser, nameToEdit}) {
                     </select>
                     <input 
                     type="number"
+                    value={editUser? ramalToEdit: null}
                     placeholder={errors.ramal? errors.ramal.message: 'Ramal'} 
                     className={errors.ramal? "user-info ramal error-input": "user-info ramal"} 
                     name='ramal' 
                     {...register("ramal")}
                     />
                     <input 
-                    type="email" 
+                    type="email"
+                    value={editUser? emailToEdit: null}
                     placeholder={errors.email? errors.email.message: "Email"} 
                     name='email' 
                     className={errors.email? "user-info email error-input" :"user-info email"} 
@@ -84,7 +87,8 @@ function AddModal({setOpenModal, editUser, nameToEdit}) {
                   </div>
                   <div className="input-tel">
                     <input 
-                    type="tel" 
+                    type="tel"
+                    value={editUser? telToEdit: null}
                     placeholder={errors.tel? errors.tel.message: 'Telefone'} 
                     className={errors.tel? "user-info tel error-input":'user-info tel'} 
                     name='tel' 

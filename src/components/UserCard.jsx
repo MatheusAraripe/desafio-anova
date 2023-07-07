@@ -2,11 +2,14 @@ import React from 'react'
 import {FaPencilAlt, FaTrashAlt, FaUserCircle} from "react-icons/fa"
 import "../styles/user_card.scss"
 
-function UserCard({id, name, unidade, ramal, tel, tel2, email, setDeleteModalOpen, setOpenModal, setIdToDelete, setContactName}) {
+function UserCard({id, name, unidade, ramal, tel, tel2, email, setDeleteModalOpen, setOpenModal, setIdToDelete, setContactName, setContactRamal, setContactEmail, setContactTel}) {
 
   const handleClickToEdit = () =>{
     setOpenModal(true);
     setContactName(name);
+    setContactRamal(ramal);
+    setContactEmail(email);
+    setContactTel(tel);
   }
 
   const handleClick = () => {

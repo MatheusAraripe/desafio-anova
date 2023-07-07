@@ -28,6 +28,10 @@ function HomePage() {
   // hooks para o modal de editar
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [contactName, setContactName] = useState("");
+  const [contactRamal, setContactRamal] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactTel, setContactTel] = useState("");
+
 
   // const {logout} = useContext(AuthContext);
   // const handleLogout = () => {
@@ -52,7 +56,11 @@ function HomePage() {
       <AddModal 
       setOpenModal={setEditModalOpen} 
       editUser={true} 
-      nameToEdit={contactName}/>
+      nameToEdit={contactName}
+      ramalToEdit={contactRamal}
+      emailToEdit={contactEmail}
+      telToEdit={contactTel}
+      />
       }
 
       {/*modal de convidar usuário*/}
@@ -97,6 +105,9 @@ function HomePage() {
                 setOpenModal={setEditModalOpen}
                 setIdToDelete = {setIdToDelete}
                 setContactName = {setContactName}
+                setContactEmail={setContactEmail}
+                setContactTel={setContactTel}
+                setContactRamal={setContactRamal}
                 />
               )
             })}
