@@ -23,11 +23,17 @@ const schema = yup.object({
 })
 
 
-function EditModal(setOpenModal) {
+function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit}) {
+
+  const [text, setText] = useState(nameToEdit);
+  const [email, setEmail] = useState(emailToEdit);
+  const [ramal, setRamal] = useState(ramalToEdit);
+  const [tel, setTel] = useState(telToEdit);
+
 
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
-  
+
   const handleSubmit = (data) =>{
     console.log(data);
   }
@@ -43,12 +49,14 @@ function EditModal(setOpenModal) {
                     <div className="inputs-container">
                     <div className="input-name">
                         <input
-                        value={""}
+                        value={text}
                         type="text"
                         placeholder={errors.name? errors.name.message: 'Nome'}
                         className={errors.name? "user-info name error-input" : "user-info name"} 
                         name='name' 
-                        {...register("name")}
+                        {...register("name", {
+                            onChange: (e) => {setText(e.target.value)}
+                        })}
                         />
                     </div>
                     <div className="input-informations">
@@ -59,29 +67,35 @@ function EditModal(setOpenModal) {
                         </select>
                         <input 
                         type="number"
-                        value={""}
+                        value={ramal}
                         placeholder={errors.ramal? errors.ramal.message: 'Ramal'} 
                         className={errors.ramal? "user-info ramal error-input": "user-info ramal"} 
                         name='ramal' 
-                        {...register("ramal")}
+                        {...register("ramal", {
+                            onChange: (e) => {setRamal(e.target.value)}
+                        })}
                         />
                         <input 
                         type="email"
-                        value={""}
+                        value={email}
                         placeholder={errors.email? errors.email.message: "Email"} 
                         name='email' 
                         className={errors.email? "user-info email error-input" :"user-info email"} 
-                        {...register("email")}
+                        {...register("email", {
+                            onChange: (e) => {setEmail(e.target.value)}
+                        })}
                         />
                     </div>
                     <div className="input-tel">
                         <input 
                         type="tel"
-                        value={""}
+                        value={tel}
                         placeholder={errors.tel? errors.tel.message: 'Telefone'} 
                         className={errors.tel? "user-info tel error-input":'user-info tel'} 
                         name='tel' 
-                        {...register("tel")}
+                        {...register("tel", {
+                            onChange: (e) => {setTel(e.target.value)}
+                        })}
                         />
                 
                         <input 

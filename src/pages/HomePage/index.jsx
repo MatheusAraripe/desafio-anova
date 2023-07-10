@@ -55,7 +55,11 @@ function HomePage() {
       {/*modal de editar usuário*/}
       {editModalOpen && 
       <EditModal 
-      setOpenModal={setEditModalOpen} 
+      setOpenModal={setEditModalOpen}
+      nameToEdit={contactName}
+      emailToEdit={contactEmail} 
+      ramalToEdit={contactRamal} 
+      telToEdit={contactTel} 
       />
       }
 
