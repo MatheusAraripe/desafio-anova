@@ -13,7 +13,6 @@ const schema = yup.object({
     name: yup.string().required("Campo obrigaório").min(3, 'Nome muito curto'),
     ramal: yup.number().required("Campo obrigaório"),
     tel: yup.string().required("Campo obrigaório"),
-    tel2: yup.string().required("Campo obrigaório"),
     uni: yup.string().required("Campo obrigaório"),
     password: yup.string().required("Campo obrigaório"),
     confirmPassword: yup.string().required("Insira a senha novamente")
@@ -23,12 +22,13 @@ const schema = yup.object({
 })
 
 
-function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit, uniToEdit}) {
+function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit, uniToEdit, tel2ToEdit}) {
 
   const [text, setText] = useState(nameToEdit);
   const [email, setEmail] = useState(emailToEdit);
   const [ramal, setRamal] = useState(ramalToEdit);
   const [tel, setTel] = useState(telToEdit);
+  const [tel2, setTel2] = useState(tel2ToEdit);
   const [uni, setUni] = useState(uniToEdit);
 
 
@@ -105,10 +105,13 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
                 
                         <input 
                         type="tel"
-                        placeholder={errors.tel2? errors.tel2.message: 'Telefone'} 
+                        value={tel2}
+                        placeholder={errors.tel2? errors.tel2.message: 'Telefone 2'} 
                         className={errors.tel2? "user-info edit-tel error-input":'user-info edit-tel'} 
                         name='tel' 
-                        {...register("tel2")}/>
+                        {...register("tel2", {
+                            onChange: (e) => {setTel2(e.target.value)}
+                        })}/>
 
                     </div>
                         <div className="input-tel">

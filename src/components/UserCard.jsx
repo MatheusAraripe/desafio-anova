@@ -10,6 +10,7 @@ function UserCard({id, name, unidade, ramal, tel, tel2, email,
   setContactRamal, 
   setContactEmail, 
   setContactTel,
+  setContactTel2,
   setContactUni
 }) {
 
@@ -19,6 +20,7 @@ function UserCard({id, name, unidade, ramal, tel, tel2, email,
     setContactRamal(ramal);
     setContactEmail(email);
     setContactTel(tel);
+    setContactTel2(tel2);
     setContactUni(unidade);
   }
 

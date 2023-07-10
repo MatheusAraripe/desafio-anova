@@ -32,6 +32,7 @@ function HomePage() {
   const [contactRamal, setContactRamal] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactTel, setContactTel] = useState("");
+  const [contactTel2, setContactTel2] = useState("");
   const [contactUni, setContactUni] = useState("");
 
 
@@ -61,6 +62,7 @@ function HomePage() {
       emailToEdit={contactEmail} 
       ramalToEdit={contactRamal} 
       telToEdit={contactTel}
+      tel2ToEdit={contactTel2}
       uniToEdit={contactUni}
       />
       }
@@ -109,6 +111,7 @@ function HomePage() {
                 setContactName = {setContactName}
                 setContactEmail={setContactEmail}
                 setContactTel={setContactTel}
+                setContactTel2={setContactTel2}
                 setContactRamal={setContactRamal}
                 setContactUni={setContactUni}
                 />
