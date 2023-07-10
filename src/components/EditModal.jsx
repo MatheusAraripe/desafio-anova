@@ -23,12 +23,14 @@ const schema = yup.object({
 })
 
 
-function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit}) {
+function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit, uniToEdit}) {
 
   const [text, setText] = useState(nameToEdit);
   const [email, setEmail] = useState(emailToEdit);
   const [ramal, setRamal] = useState(ramalToEdit);
   const [tel, setTel] = useState(telToEdit);
+  const [uni, setUni] = useState(uniToEdit);
+
 
 
 
@@ -60,8 +62,10 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
                         />
                     </div>
                     <div className="input-informations">
-                        <select name="uni" id="select" className="user-info unidade" {...register("uni")}>
-                            <option value="none" selected disabled hidden>Select an Option</option>
+                        <select name="uni" id="select" className="user-info unidade" {...register("uni", {
+                            onChange: (e) => {setUni(e.target.value)}
+                        })}>
+                            <option value={uni} selected disabled hidden>{uni}</option>
                             <option value="Rio de Janeiro">Rio de Janeiro</option>
                             <option value="Juiz de Fora">Juiz de Fora</option>
                             <option value="São Paulo">São Paulo</option>

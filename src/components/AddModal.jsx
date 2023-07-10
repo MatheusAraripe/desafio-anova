@@ -15,7 +15,6 @@ const schema = yup.object({
     name: yup.string().required("Campo obrigaório").min(3, 'Nome muito curto'),
     ramal: yup.number().required("Campo obrigaório"),
     tel: yup.string().required("Campo obrigaório"),
-    tel2: yup.string().required("Campo obrigaório"),
     uni: yup.string().required("Campo obrigaório")
 })
 

@@ -32,6 +32,7 @@ function HomePage() {
   const [contactRamal, setContactRamal] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactTel, setContactTel] = useState("");
+  const [contactUni, setContactUni] = useState("");
 
 
   // const {logout} = useContext(AuthContext);
@@ -59,7 +60,8 @@ function HomePage() {
       nameToEdit={contactName}
       emailToEdit={contactEmail} 
       ramalToEdit={contactRamal} 
-      telToEdit={contactTel} 
+      telToEdit={contactTel}
+      uniToEdit={contactUni}
       />
       }
 
@@ -108,6 +110,7 @@ function HomePage() {
                 setContactEmail={setContactEmail}
                 setContactTel={setContactTel}
                 setContactRamal={setContactRamal}
+                setContactUni={setContactUni}
                 />
               )
             })}
