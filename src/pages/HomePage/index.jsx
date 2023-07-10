@@ -9,6 +9,7 @@ import NeedEmailModal from '../../components/NeedEmailModal';
 import DeleteModal from '../../components/DeleteModal';
 import './homepage.scss'
 import UserCard from '../../components/UserCard';
+import EditModal from '../../components/EditModal';
 
 function HomePage() {
 
@@ -49,17 +50,12 @@ function HomePage() {
       }
 
       {/*modal de adicionar usuário*/}
-      {modalOpen && <AddModal setOpenModal={setModalOpen} editUser={false} />}
+      {modalOpen && <AddModal setOpenModal={setModalOpen}/>}
 
       {/*modal de editar usuário*/}
       {editModalOpen && 
-      <AddModal 
+      <EditModal 
       setOpenModal={setEditModalOpen} 
-      editUser={true} 
-      nameToEdit={contactName}
-      ramalToEdit={contactRamal}
-      emailToEdit={contactEmail}
-      telToEdit={contactTel}
       />
       }
 

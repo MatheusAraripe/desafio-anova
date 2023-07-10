@@ -16,17 +16,12 @@ const schema = yup.object({
     ramal: yup.number().required("Campo obrigaório"),
     tel: yup.string().required("Campo obrigaório"),
     tel2: yup.string().required("Campo obrigaório"),
-    uni: yup.string().required("Campo obrigaório"),
-    password: yup.string().required("Campo obrigaório"),
-    confirmPassword: yup.string().required("Insira a senha novamente")
-    // usando o oneOf para achar a correspondência no array
-    // usando "ref" para pegar o valor de referência
-    .oneOf([yup.ref("password")], "As senhas devem ser iguais")
+    uni: yup.string().required("Campo obrigaório")
 })
 
 
 // eslint-disable-next-line react/prop-types
-function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit, telToEdit}) {
+function AddModal({setOpenModal}) {
 
   const [newInput, setNewInput] = useState(false);
 
@@ -51,7 +46,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
 
   return (
     <div className='modal-background'>
-        <div className={editUser? "modal-container edit": "modal-container"}>
+        <div className="modal-container">
           <form>
             <div className="body">
                 <div className="add-pic">
@@ -60,8 +55,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                 <div className="inputs-container">
                   <div className="input-name">
                     <input
-                    value={editUser? nameToEdit: undefined}
-                    type="text" 
+                    type="text"
                     placeholder={errors.name? errors.name.message: 'Nome'}
                     className={errors.name? "user-info name error-input" : "user-info name"} 
                     name='name' 
@@ -76,7 +70,6 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                     </select>
                     <input 
                     type="number"
-                    value={editUser? ramalToEdit: undefined}
                     placeholder={errors.ramal? errors.ramal.message: 'Ramal'} 
                     className={errors.ramal? "user-info ramal error-input": "user-info ramal"} 
                     name='ramal' 
@@ -84,7 +77,6 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                     />
                     <input 
                     type="email"
-                    value={editUser? emailToEdit: undefined}
                     placeholder={errors.email? errors.email.message: "Email"} 
                     name='email' 
                     className={errors.email? "user-info email error-input" :"user-info email"} 
@@ -94,7 +86,6 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                   <div className="input-tel">
                     <input 
                     type="tel"
-                    value={editUser? telToEdit: undefined}
                     placeholder={errors.tel? errors.tel.message: 'Telefone'} 
                     className={errors.tel? "user-info tel error-input":'user-info tel'} 
                     name='tel' 
@@ -110,51 +101,17 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                     name='tel' 
                     {...register("tel2")}/>
                     :
-                    !editUser && <button className="plus-btn" onClick={ ()=> setNewInput(true)}>+</button>
-                    }
-                    
-                    {
-                    editUser && 
-                    <input 
-                    type="tel" 
-                    placeholder={errors.tel? errors.tel.message: 'Telefone'} 
-                    className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
-                    name='tel' 
-                    {...register("tel2")}/>
+                    <button className="plus-btn" onClick={ ()=> setNewInput(true)}>+</button>
                     }
 
                   </div>
-                  {
-                  editUser &&
-                    <div className="input-tel">
-                      <input 
-                      type="password"
-                      placeholder='XXXXXXXXXXXXXXXX' 
-                      className={errors.tel? "user-info tel error-input":'user-info tel'} 
-                      name='tel' 
-                      {...register("password")}/>
-                      <input 
-                      type="password" 
-                      placeholder='Confirmar Senha' 
-                      className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
-                      name='tel' 
-                      {...register("confirmPassword")}/>
-                    </div>
-                  }
                 </div>
             </div>
-            {editUser?
-              <div className="footer-edit">
-                <button className='modal-btn close' onClick={ ()=> setOpenModal(false)}>CANCELAR</button>
-                <button className='modal-btn save-user-edit' >SALVAR</button>
-            </div>
-            :
             <div className="footer">
               <button className='modal-btn close' onClick={ ()=> setOpenModal(false)}>CANCELAR</button>
               <button className='modal-btn add-user' onClick={onSubmit(handleSubmit2)}>CONTINUAR ADD</button>
               <button className='modal-btn save-user' onClick={onSubmit(handleSubmit)}>SALVAR E FINALIZAR</button>
             </div>
-            }
           </form>
         </div>
     </div>
