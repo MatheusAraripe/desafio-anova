@@ -15,7 +15,13 @@ const schema = yup.object({
     name: yup.string().required("Campo obrigaório").min(3, 'Nome muito curto'),
     ramal: yup.number().required("Campo obrigaório"),
     tel: yup.string().required("Campo obrigaório"),
-    uni: yup.string().required("Campo obrigaório")
+    tel2: yup.string().required("Campo obrigaório"),
+    uni: yup.string().required("Campo obrigaório"),
+    password: yup.string().required("Campo obrigaório"),
+    confirmPassword: yup.string().required("Insira a senha novamente")
+    // usando o oneOf para achar a correspondência no array
+    // usando "ref" para pegar o valor de referência
+    .oneOf([yup.ref("password")], "As senhas devem ser iguais")
 })
 
 
@@ -54,7 +60,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                 <div className="inputs-container">
                   <div className="input-name">
                     <input
-                    value={editUser? nameToEdit: null}
+                    value={editUser? nameToEdit: undefined}
                     type="text" 
                     placeholder={errors.name? errors.name.message: 'Nome'}
                     className={errors.name? "user-info name error-input" : "user-info name"} 
@@ -70,7 +76,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                     </select>
                     <input 
                     type="number"
-                    value={editUser? ramalToEdit: null}
+                    value={editUser? ramalToEdit: undefined}
                     placeholder={errors.ramal? errors.ramal.message: 'Ramal'} 
                     className={errors.ramal? "user-info ramal error-input": "user-info ramal"} 
                     name='ramal' 
@@ -78,7 +84,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                     />
                     <input 
                     type="email"
-                    value={editUser? emailToEdit: null}
+                    value={editUser? emailToEdit: undefined}
                     placeholder={errors.email? errors.email.message: "Email"} 
                     name='email' 
                     className={errors.email? "user-info email error-input" :"user-info email"} 
@@ -88,7 +94,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                   <div className="input-tel">
                     <input 
                     type="tel"
-                    value={editUser? telToEdit: null}
+                    value={editUser? telToEdit: undefined}
                     placeholder={errors.tel? errors.tel.message: 'Telefone'} 
                     className={errors.tel? "user-info tel error-input":'user-info tel'} 
                     name='tel' 
@@ -114,7 +120,7 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                     placeholder={errors.tel? errors.tel.message: 'Telefone'} 
                     className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
                     name='tel' 
-                    {...register("tel")}/>
+                    {...register("tel2")}/>
                     }
 
                   </div>
@@ -122,17 +128,17 @@ function AddModal({setOpenModal, editUser, nameToEdit, ramalToEdit, emailToEdit,
                   editUser &&
                     <div className="input-tel">
                       <input 
-                      type="password" 
+                      type="password"
                       placeholder='XXXXXXXXXXXXXXXX' 
                       className={errors.tel? "user-info tel error-input":'user-info tel'} 
                       name='tel' 
-                      {...register("tel")}/>
+                      {...register("password")}/>
                       <input 
                       type="password" 
                       placeholder='Confirmar Senha' 
                       className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
                       name='tel' 
-                      {...register("tel")}/>
+                      {...register("confirmPassword")}/>
                     </div>
                   }
                 </div>
