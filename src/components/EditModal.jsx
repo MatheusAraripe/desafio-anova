@@ -61,6 +61,7 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
                     </div>
                     <div className="input-informations">
                         <select name="uni" id="select" className="user-info unidade" {...register("uni")}>
+                            <option value="none" selected disabled hidden>Select an Option</option>
                             <option value="Rio de Janeiro">Rio de Janeiro</option>
                             <option value="Juiz de Fora">Juiz de Fora</option>
                             <option value="São Paulo">São Paulo</option>
@@ -99,9 +100,9 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
                         />
                 
                         <input 
-                        type="tel" 
-                        placeholder={errors.tel? errors.tel.message: 'Telefone'} 
-                        className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
+                        type="tel"
+                        placeholder={errors.tel2? errors.tel2.message: 'Telefone'} 
+                        className={errors.tel2? "user-info edit-tel error-input":'user-info edit-tel'} 
                         name='tel' 
                         {...register("tel2")}/>
 
@@ -109,15 +110,15 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
                         <div className="input-tel">
                         <input 
                         type="password"
-                        placeholder='XXXXXXXXXXXXXXXX' 
-                        className={errors.tel? "user-info tel error-input":'user-info tel'} 
-                        name='tel' 
+                        placeholder={errors.password? errors.password.message: 'XXXXXXXXXXXXXXXX'}
+                        className={errors.password? "user-info tel error-input":'user-info tel'} 
+                        name='password' 
                         {...register("password")}/>
                         <input 
                         type="password" 
-                        placeholder='Confirmar Senha' 
-                        className={errors.tel? "user-info edit-tel error-input":'user-info edit-tel'} 
-                        name='tel' 
+                        placeholder={errors.confirmPassword? errors.confirmPassword.message: 'Confirmar Senha'} 
+                        className={errors.confirmPassword? "user-info edit-tel error-input":'user-info edit-tel'} 
+                        name='confirm-password' 
                         {...register("confirmPassword")}/>
                         </div>
                     </div>
