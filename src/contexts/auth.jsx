@@ -163,8 +163,14 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    const searchUser = (name) => {
+        const contactArry = getContactsFromLs();
+        const filterContacts = contactArry.filter(item => item.name.includes(name));
+        return filterContacts
+    }
+
     return(
-        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser, editUser, validateUser}}>
+        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser, editUser, validateUser, searchUser}}>
             {children}
         </AuthContext.Provider>
     );

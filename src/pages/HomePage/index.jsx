@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/auth';
 import NavBar from '../../components/NavBar';
 import {BsEnvelopePaperHeartFill} from "react-icons/bs"
 import AddModal from '../../components/AddModal';
-import Baner from "../../components/Baner"
+import InputWithSelect from '../../components/InputWithSelect';
 import NeedEmailModal from '../../components/NeedEmailModal';
 import DeleteModal from '../../components/DeleteModal';
 import './homepage.scss'
@@ -13,8 +13,12 @@ import EditModal from '../../components/EditModal';
 
 function HomePage() {
 
-  const {getContactsFromLs} = useContext(AuthContext);
-  const contacts = getContactsFromLs();
+  //lista todos os contatos buscados
+  const [contactsList, setContactsList] = useState([]);
+
+  // // pega todos os contatos 
+  // const {getContactsFromLs} = useContext(AuthContext);
+  // const contacts = getContactsFromLs();
 
   // hooks para abrir os modais
 
@@ -35,12 +39,6 @@ function HomePage() {
   const [contactTel2, setContactTel2] = useState("");
   const [contactUni, setContactUni] = useState("");
   const [idToEdit, setIdToEdit] = useState("");
-
-
-  // const {logout} = useContext(AuthContext);
-  // const handleLogout = () => {
-  //   logout()
-  // };
 
   return (
     <>
@@ -86,16 +84,14 @@ function HomePage() {
           </div>
 
           <div className="baner-section">
-            <Baner />
+            <div className='baner-container'>
+              <InputWithSelect setContactsList = {setContactsList}/>
+            </div>
           </div>
 
-          {/* <h1 className='home-page-title'>
-              Home page privada!
-          </h1>
-          <button onClick={handleLogout}>Logout</button> */}
           <div className="cards-section">
 
-            {contacts.map((item, index) => {
+            {contactsList.map((item, index) => {
         
               return(
                 <UserCard 
