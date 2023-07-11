@@ -151,8 +151,20 @@ export const AuthProvider = ({children}) => {
         localStorage.setItem('contacts', JSON.stringify(contactArry));
     }
 
+    const validateUser = (password) => {
+        let user = localStorage.getItem("user");
+        user = JSON.parse(user)
+
+        if(password !== user.password){
+            alert("Senha incorreta");
+            return(false);
+        }else{
+            return(true);
+        }
+    }
+
     return(
-        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser, editUser}}>
+        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser, editUser, validateUser}}>
             {children}
         </AuthContext.Provider>
     );

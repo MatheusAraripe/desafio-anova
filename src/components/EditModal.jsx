@@ -37,11 +37,15 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
 
-  const {editUser} = useContext(AuthContext);
+  const {editUser, validateUser} = useContext(AuthContext);
 
   const handleSubmit = (data) =>{
-    editUser(idToEdit, data.name, data.email, data.uni, data.ramal, data.tel, data.tel2);
-    setOpenModal(false);
+    if( validateUser(data.password) ){
+        editUser(idToEdit, data.name, data.email, data.uni, data.ramal, data.tel, data.tel2);
+        setOpenModal(false);
+    }else{
+        setOpenModal(true)
+    }
   }
 
   return (
