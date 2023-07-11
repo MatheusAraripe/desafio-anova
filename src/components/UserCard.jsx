@@ -11,7 +11,8 @@ function UserCard({id, name, unidade, ramal, tel, tel2, email,
   setContactEmail, 
   setContactTel,
   setContactTel2,
-  setContactUni
+  setContactUni,
+  setIdToEdit
 }) {
 
   const handleClickToEdit = () =>{
@@ -22,6 +23,7 @@ function UserCard({id, name, unidade, ramal, tel, tel2, email,
     setContactTel(tel);
     setContactTel2(tel2);
     setContactUni(unidade);
+    setIdToEdit(id);
   }
 
   const handleClick = () => {

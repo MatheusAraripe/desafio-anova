@@ -34,6 +34,7 @@ function HomePage() {
   const [contactTel, setContactTel] = useState("");
   const [contactTel2, setContactTel2] = useState("");
   const [contactUni, setContactUni] = useState("");
+  const [idToEdit, setIdToEdit] = useState("");
 
 
   // const {logout} = useContext(AuthContext);
@@ -64,6 +65,7 @@ function HomePage() {
       telToEdit={contactTel}
       tel2ToEdit={contactTel2}
       uniToEdit={contactUni}
+      idToEdit={idToEdit}
       />
       }
 
@@ -114,6 +116,7 @@ function HomePage() {
                 setContactTel2={setContactTel2}
                 setContactRamal={setContactRamal}
                 setContactUni={setContactUni}
+                setIdToEdit={setIdToEdit}
                 />
               )
             })}

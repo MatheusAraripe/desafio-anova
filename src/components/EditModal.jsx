@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { AuthContext } from '../contexts/auth';
 import "../styles/modal.scss"
 import {FaUserCircle} from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -22,7 +23,7 @@ const schema = yup.object({
 })
 
 
-function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit, uniToEdit, tel2ToEdit}) {
+function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdit, uniToEdit, tel2ToEdit, idToEdit}) {
 
   const [text, setText] = useState(nameToEdit);
   const [email, setEmail] = useState(emailToEdit);
@@ -36,8 +37,11 @@ function EditModal({setOpenModal, nameToEdit, ramalToEdit, emailToEdit, telToEdi
 
   const { register, handleSubmit: onSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
 
+  const {editUser} = useContext(AuthContext);
+
   const handleSubmit = (data) =>{
-    console.log(data);
+    editUser(idToEdit, data.name, data.email, data.uni, data.ramal, data.tel, data.tel2);
+    setOpenModal(false);
   }
 
   return (

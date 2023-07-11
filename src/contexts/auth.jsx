@@ -123,14 +123,35 @@ export const AuthProvider = ({children}) => {
     const excludeUser = (id) => {
         const contactArry = getContactsFromLs();
         const updatedList = contactArry.filter(item => item.id !== id);
-        // console.log(contactArry, updatedList, id);
 
         setContacts(updatedList)
         localStorage.setItem('contacts', JSON.stringify(updatedList));
     }
 
+
+    const editUser = (id, name, email, uni, ramal, tel, tel2) => {
+        const contactArry = getContactsFromLs();
+        const contact = contactArry.find(user => user.id === id);
+        const index = contactArry.indexOf(contact);
+
+        const newEditConatc = {
+            id,
+            name,
+            email,
+            uni,
+            ramal,
+            tel,
+            tel2
+        }
+
+        contactArry[index] = newEditConatc
+
+        setContacts(contactArry)
+        localStorage.setItem('contacts', JSON.stringify(contactArry));
+    }
+
     return(
-        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser}}>
+        <AuthContext.Provider value={{authenticated: !!user, users, loading, login, logout, signUp, addUser, getContactsFromLs, excludeUser, editUser}}>
             {children}
         </AuthContext.Provider>
     );
