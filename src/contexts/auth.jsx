@@ -163,10 +163,41 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-    const searchUser = (name) => {
+    const filterUni = (uni) =>{
+        if(uni === "all"){
+            return getContactsFromLs();
+        }else{
+            const contactArry = getContactsFromLs();
+            const filterContactsByUni = contactArry.filter(item => item.uni === uni);
+            return filterContactsByUni;
+        }
+    }
+
+    const filterName = (name) => {
         const contactArry = getContactsFromLs();
-        const filterContacts = contactArry.filter(item => item.name.includes(name));
-        return filterContacts
+        const filterContactsByName = contactArry.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
+        return filterContactsByName;
+    }
+
+    const searchUser = (name, uni, isName) => {
+        if(isName) {
+            if(name === ""){
+                return filterUni(uni);
+            }else{
+                const uniArry = filterUni(uni)
+                const filterArry = uniArry.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
+                return filterArry;
+            }
+
+        } else {
+            if (uni === "all"){
+                return filterName(name)
+            } else {
+                const nameArry = filterName(name)
+                const filterArry = nameArry.filter(item => item.uni === uni);
+                return filterArry;
+            }
+        }
     }
 
     return(
