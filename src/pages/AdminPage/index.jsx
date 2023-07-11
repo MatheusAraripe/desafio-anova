@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar'
 import InputWithSelect from '../../components/InputWithSelect'
 import TableAdmin from '../../components/TableAdmin'
 import DeleteModal from '../../components/DeleteModal'
-import AddModal from '../../components/AddModal'
+import EditModal from '../../components/EditModal';
 import "./adminpage.scss"
 
 function AdminPage() {
@@ -14,8 +14,17 @@ function AdminPage() {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
-  // hook para pegar a id do usuário para deletar
-  const [idToDelete, setIdToDelete] = useState("");
+  // hook para pegar a id do usuário para deletar e editar
+  const [idUser, setIdUser] = useState("");
+
+
+  // hooks para o modal de editar
+  const [contactName, setContactName] = useState("");
+  const [contactRamal, setContactRamal] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactTel, setContactTel] = useState("");
+  const [contactTel2, setContactTel2] = useState("");
+  const [contactUni, setContactUni] = useState("");
 
   return (
     <>
@@ -23,14 +32,21 @@ function AdminPage() {
       {/*modal de deletar card*/}
       {deleteModalOpen && <DeleteModal 
       setOpenDeleteModal = {setDeleteModalOpen}
-      setIdToDelete = {idToDelete}
+      setIdToDelete = {idUser}
       title = {"Excluir usuário?"}/>
       }
 
       {/*modal de editar user*/}
-      {editModalOpen && <AddModal 
-      setOpenModal={setEditModalOpen} 
-      editUser={true} />
+      {editModalOpen && <EditModal 
+      setOpenModal={setEditModalOpen}
+      nameToEdit={contactName}
+      emailToEdit={contactEmail} 
+      ramalToEdit={contactRamal} 
+      telToEdit={contactTel}
+      tel2ToEdit={contactTel2}
+      uniToEdit={contactUni}
+      idToEdit={idUser}
+      />
       }
 
 
@@ -46,7 +62,14 @@ function AdminPage() {
             <TableAdmin 
             setDeleteModalOpen = {setDeleteModalOpen} 
             setOpenEditModal = {setEditModalOpen}
-            setIdToDelete = {setIdToDelete}
+            setIdToDelete = {setIdUser}
+            setContactName = {setContactName}
+            setContactEmail={setContactEmail}
+            setContactTel={setContactTel}
+            setContactTel2={setContactTel2}
+            setContactRamal={setContactRamal}
+            setContactUni={setContactUni}
+            setIdToEdit={setIdUser}
             />
           </div>
       </div>
