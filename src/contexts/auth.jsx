@@ -60,7 +60,8 @@ export const AuthProvider = ({children}) => {
 
             const loggedUser = {
                 id: "1",
-                email: foundUser.email
+                email: foundUser.email,
+                password: foundUser.password
             };
             
             localStorage.setItem("user", JSON.stringify(loggedUser));
@@ -90,7 +91,7 @@ export const AuthProvider = ({children}) => {
             console.log(localStorage.getItem('users'));
 
             // após o usuário criar a conta ele é automaticamente logado 
-            localStorage.setItem("user", JSON.stringify({id: "1", email}));
+            localStorage.setItem("user", JSON.stringify({id: "1", email, password}));
             navigate("/");
         }
     };
