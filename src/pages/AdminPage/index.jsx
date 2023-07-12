@@ -10,6 +10,10 @@ import "./adminpage.scss"
 
 function AdminPage() {
 
+  // hook para a busca de usuário
+  const {getContactsFromLs} = useContext(AuthContext);
+  const [contactsList, setContactsList] = useState(getContactsFromLs());
+
   // hooks para abrir os modais
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -56,10 +60,11 @@ function AdminPage() {
               <h2 className='admin-title'>Gerenciar Usuários</h2>
           </div>
           <div className="input-admin-container">
-            <InputWithSelect />
+            <InputWithSelect setContactsList = {setContactsList}/>
           </div>
           <div className="table-container">
-            <TableAdmin 
+            <TableAdmin
+            setContactsList={contactsList}
             setDeleteModalOpen = {setDeleteModalOpen} 
             setOpenEditModal = {setEditModalOpen}
             setIdToDelete = {setIdUser}

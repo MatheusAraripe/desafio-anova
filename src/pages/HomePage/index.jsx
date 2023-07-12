@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React ,{useContext, useState} from 'react'
-import { AuthContext } from '../../contexts/auth';
+import React ,{useState} from 'react'
 import NavBar from '../../components/NavBar';
 import {BsEnvelopePaperHeartFill} from "react-icons/bs"
 import AddModal from '../../components/AddModal';

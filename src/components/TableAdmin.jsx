@@ -1,8 +1,7 @@
-import React, {useContext}from 'react';
-import { AuthContext } from '../contexts/auth';
+import React from 'react';
 import {FaPencilAlt, FaTrashAlt} from "react-icons/fa"
 
-const TableAdmin = ({setDeleteModalOpen, setOpenEditModal, setIdToDelete,
+const TableAdmin = ({setContactsList, setDeleteModalOpen, setOpenEditModal, setIdToDelete,
   setContactName, 
   setContactRamal, 
   setContactEmail, 
@@ -11,11 +10,6 @@ const TableAdmin = ({setDeleteModalOpen, setOpenEditModal, setIdToDelete,
   setContactUni,
   setIdToEdit
 }) => {
-
-  // busca todos os contatos no LocalStorage
-  const {getContactsFromLs} = useContext(AuthContext);
-  const contacts = getContactsFromLs();
-
 
   const handleClick = (id) => {
     setDeleteModalOpen(true);
@@ -45,7 +39,8 @@ const TableAdmin = ({setDeleteModalOpen, setOpenEditModal, setIdToDelete,
         </tr>
       </thead>
       <tbody>
-        {contacts.map((contact, index) => (
+        
+        {setContactsList.map((contact, index) => (
           <tr key={index} >
             <td className='td-name'>{contact.name}</td>
             <td>{contact.uni}</td>

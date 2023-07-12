@@ -4,6 +4,7 @@ import {BiSearchAlt} from "react-icons/bi"
 import '../styles/input_with_select.scss'
 import '../styles/select.scss'
 
+
 function InputWithSelect({setContactsList}) {
 
   const {searchUser} = useContext(AuthContext);
