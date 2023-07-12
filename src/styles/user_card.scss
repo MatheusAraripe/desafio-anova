@@ -10,6 +10,13 @@
     border-radius: 8px;
     display: flex;
     padding: 16px 8px 0px 16px;
+
+    position: relative;
+    left: 320%;
+    animation: rigthToLeft 0.5s ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: var(--delay);
 }
 
 .user-card-body{
@@ -73,4 +80,14 @@
     color: #07020D;
     margin-top: 8px;
     opacity: 0.4;
+}
+
+@keyframes rigthToLeft {
+    0%{
+        left: 320%;
+    }
+
+    100%{
+        left: 0%;
+    }
 }

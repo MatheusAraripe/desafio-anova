@@ -12,6 +12,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 26px;
+
+    overflow: hidden;
 }
 
 .baner-container{
@@ -21,4 +23,4 @@
     justify-content: center;
     align-items:flex-end;
     background-color: rgba(2, 148, 86, 0.80);
-  }
+}

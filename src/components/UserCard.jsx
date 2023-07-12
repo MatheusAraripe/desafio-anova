@@ -2,7 +2,7 @@ import React from 'react'
 import {FaPencilAlt, FaTrashAlt, FaUserCircle} from "react-icons/fa"
 import "../styles/user_card.scss"
 
-function UserCard({id, name, unidade, ramal, tel, tel2, email, 
+function UserCard({index,id, name, unidade, ramal, tel, tel2, email, 
   setDeleteModalOpen, 
   setOpenModal, 
   setIdToDelete, 
@@ -32,7 +32,7 @@ function UserCard({id, name, unidade, ramal, tel, tel2, email,
   }
 
   return (
-    <div className='user-card-container'>
+    <div className='user-card-container' style={{'--delay': `${index + 1}00ms`}}>
         <div className="user-card-image">
             <FaUserCircle className='user-image-icon'/>
         </div>

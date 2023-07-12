@@ -96,6 +96,7 @@ function HomePage() {
               return(
                 <UserCard 
                 key={index}
+                index={index}
                 id={item.id} 
                 name={item.name}
                 unidade={item.uni}
