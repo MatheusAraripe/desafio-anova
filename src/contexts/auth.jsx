@@ -99,9 +99,7 @@ export const AuthProvider = ({children}) => {
     const logout = () => {
         localStorage.removeItem("user");
         setUsers(null);
-        navigate("/login");
     };
-
 
     // guarda usuários no localStorage
     const addUser = (name, email, uni, ramal, tel, tel2) =>{
